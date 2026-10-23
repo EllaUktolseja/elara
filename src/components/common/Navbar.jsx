@@ -15,7 +15,7 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-30 border-b border-line/80 bg-[#fbfaff]/90 backdrop-blur-xl">
-      <nav className="mx-auto flex w-[min(1180px,calc(100%-2.5rem))] min-h-[76px] items-center justify-between gap-5 max-md:w-[calc(100%-2rem)] max-md:flex-wrap max-md:py-3" aria-label="Main navigation">
+      <nav className="mx-auto flex w-full max-w-[1180px] px-5 sm:px-8 min-h-[76px] items-center justify-between gap-5 max-md:px-4 max-md:flex-wrap max-md:py-3" aria-label="Main navigation">
         <NavLink className="inline-flex shrink-0 items-center gap-2.5 font-display text-xl font-extrabold tracking-[-.07em]" to="/" aria-label="Elara home" onClick={() => setMenuOpen(false)}>
           <span className="grid size-9 place-items-center rounded-xl bg-gradient-to-br from-purple-dark to-purple text-base text-white shadow-lg shadow-purple/20">E</span>
           <span>elara<span className="text-purple">.</span></span>
