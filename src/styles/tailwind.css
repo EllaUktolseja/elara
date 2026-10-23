@@ -1,1 +1,7 @@
+@layer theme, base, components, legacy, utilities;
+
 @import "tailwindcss";
+
+@import "./global.css" layer(legacy);
+@import "./components.css" layer(legacy);
+@import "./pages.css" layer(legacy);
