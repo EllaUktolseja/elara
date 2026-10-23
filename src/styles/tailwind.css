@@ -35,7 +35,10 @@
   .skill-orbit--inner { width: 48%; border-color: rgba(121,83,207,.25); animation-duration: 28s; }
   .skill-orbit__dot { position: absolute; left: 50%; top: -4px; width: 8px; height: 8px; border-radius: 50%; background: #9b70ec; box-shadow: 0 0 0 5px rgba(155,112,236,.12), 0 0 18px rgba(121,83,207,.45); }
   .skill-core { animation: skill-breathe 5s ease-in-out infinite; }
-  .skill-node { position: absolute; z-index: 20; display: inline-flex; align-items: center; justify-content: center; max-width: 42%; border: 1px solid rgba(255,255,255,.95); border-radius: 9999px; background: rgba(255,255,255,.88); padding: .65rem .95rem; color: #55359e; font-size: clamp(.65rem,1.5vw,.8rem); font-weight: 700; box-shadow: 0 8px 24px rgba(71,48,112,.08); backdrop-filter: blur(10px); animation: skill-node-float 6s ease-in-out infinite; white-space: nowrap; }
+  .skill-node { position: absolute; z-index: 20; display: inline-flex; align-items: center; justify-content: center; width: clamp(64px, 11vw, 94px); aspect-ratio: 1; border: 1px solid rgba(255,255,255,.95); border-radius: 50%; background: radial-gradient(circle at 32% 24%, #fff 0%, #eee5ff 28%, #c8aaf5 68%, #9870d9 100%); padding: .5rem; color: #4e328f; font-size: clamp(.58rem,1.2vw,.75rem); font-weight: 800; text-align: center; line-height: 1.15; box-shadow: inset -8px -9px 16px rgba(77,49,131,.13), 0 12px 30px rgba(71,48,112,.12); animation: skill-node-float 8s ease-in-out infinite; white-space: normal; }
+  .skill-node--2, .skill-node--5 { background: radial-gradient(circle at 30% 24%, #fff 0%, #e5f4ff 25%, #b2d7fa 68%, #6b9ad7 100%); color: #244f83; }
+  .skill-node--3, .skill-node--7 { background: radial-gradient(circle at 30% 24%, #fff 0%, #fff0d9 25%, #f5c995 68%, #d8915d 100%); color: #75471f; }
+  .skill-node--4, .skill-node--8 { background: radial-gradient(circle at 30% 24%, #fff 0%, #e1f8ed 25%, #a4ddc6 68%, #61b99a 100%); color: #215c4b; }
   .skill-node--1 { left: 44%; top: 1%; animation-delay: -.4s; }
   .skill-node--2 { right: 2%; top: 19%; animation-delay: -1.2s; }
   .skill-node--3 { right: 1%; bottom: 23%; animation-delay: -2.3s; }
@@ -49,7 +52,14 @@
 @keyframes elara-orbit { to { transform: rotate(360deg); } }
 @keyframes skill-spin { to { rotate: 360deg; } }
 @keyframes skill-breathe { 0%,100% { box-shadow: 0 20px 55px rgba(85,53,158,.22); } 50% { box-shadow: 0 25px 70px rgba(121,83,207,.38); } }
-@keyframes skill-node-float { 0%,100% { translate: 0 0; } 50% { translate: 0 -7px; } }
+@keyframes skill-node-float { 0%,100% { translate: 0 0; } 50% { translate: 0 -5px; } }
+@keyframes project-slide-in { from { opacity: 0; transform: translateX(34px) scale(.99); filter: blur(3px); } to { opacity: 1; transform: translateX(0) scale(1); filter: blur(0); } }
+.project-slide { animation: project-slide-in .55s cubic-bezier(.2,.75,.25,1) both; }
+.project-card__art { transition: background-color .5s ease; }
+.project-card:hover .project-card__art { background-image: radial-gradient(circle at 75% 20%, rgba(255,255,255,.8), transparent 28%), linear-gradient(135deg, #e8ddff, #d3c0fb 58%, #f5efff); }
+.project-card:hover .project-card__title { transform: translateY(-5px); }
+.project-card:hover .project-card__planet { border-color: rgba(121,83,207,.42); }
+@media (prefers-reduced-motion: reduce) { .project-slide { animation: none; } }
 @media (max-width: 640px) {
   .skill-node { padding: .5rem .65rem; }
   .skill-node--1 { left: 38%; }
