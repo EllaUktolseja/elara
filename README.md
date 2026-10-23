@@ -1,16 +1,46 @@
-# React + Vite
+# Elara — Personal Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive personal portfolio built with React, Vite, and JavaScript. The visual direction uses a light canvas with black typography and restrained purple accents.
 
-Currently, two official plugins are available:
+## Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- React + Vite
+- JavaScript (ES modules)
+- React Router for client-side pages
+- Plain CSS split into design tokens, global styles, reusable components, and page-level styling
+- Vercel for static deployment
 
-## React Compiler
+## Local development
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+PowerShell may block the npm.ps1 shim depending on your execution policy. On Windows, use the .cmd executable:
 
-## Expanding the ESLint configuration
+    npm.cmd install
+    npm.cmd run dev
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Useful checks:
+
+    npm.cmd run lint
+    npm.cmd run build
+    npm.cmd run preview
+
+## Project structure
+
+    src/
+    ├── app/                 # Router and application setup
+    ├── components/
+    │   ├── common/          # Shared navigation and footer
+    │   └── projects/        # Reusable project presentation
+    ├── data/                # Static portfolio content
+    ├── layouts/             # Shared page shell
+    ├── pages/               # Home, About, Skills, Projects, detail, Contact
+    └── styles/              # Design tokens, global styles, component/page styles
+
+## Content to personalize
+
+- Update project details in src/data/projects.js.
+- Replace the example email and LinkedIn URL in src/pages/Contact.jsx.
+- Replace the abstract monogram visuals with your own photo or project imagery when ready.
+
+## Deployment
+
+Import the GitHub repository into Vercel. For a Vite static site, the standard build command is npm run build and the output directory is dist. Vercel can detect the Vite setup automatically.
