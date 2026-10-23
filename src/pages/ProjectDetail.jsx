@@ -42,6 +42,29 @@ export default function ProjectDetail() {
         </div>
       </header>
 
+      <section className="mb-8 overflow-hidden rounded-[1.75rem] border border-[#e8e0f5] bg-white shadow-[0_18px_60px_rgba(65,43,108,.06)]">
+        <div className="flex items-center justify-between gap-4 border-b border-line bg-[#faf8ff] px-5 py-4 sm:px-7">
+          <div><p className="mb-1 text-[.65rem] font-bold tracking-[.17em] text-purple">PROJECT PREVIEW</p><h2 className="mb-0 font-display text-lg font-extrabold tracking-tight sm:text-xl">A closer look at {project.title}</h2></div>
+          <div className="flex shrink-0 gap-1.5" aria-hidden="true"><span className="size-2.5 rounded-full bg-[#f4a5a5]" /><span className="size-2.5 rounded-full bg-[#f2cf87]" /><span className="size-2.5 rounded-full bg-[#9bd7b4]" /></div>
+        </div>
+        {project.previewImage ? (
+          <div className="bg-[#f5f1fc] p-3 sm:p-5"><img src={project.previewImage} alt={`${project.title} website preview`} loading="lazy" decoding="async" className="max-h-[620px] w-full rounded-xl border border-line object-contain object-top shadow-sm" /></div>
+        ) : project.liveUrl ? (
+          <div className="bg-[#f5f1fc] p-3 sm:p-5"><iframe title={`${project.title} live website preview`} src={project.liveUrl} loading="lazy" className="h-[430px] w-full rounded-xl border border-line bg-white sm:h-[560px]" referrerPolicy="strict-origin-when-cross-origin" /></div>
+        ) : (
+          <div className="relative isolate flex min-h-[280px] flex-col justify-between overflow-hidden bg-gradient-to-br from-[#fbf9ff] via-[#f2eaff] to-[#e4d8ff] p-6 sm:min-h-[350px] sm:p-10">
+            <div className="grid-dots absolute inset-0 -z-10 opacity-45" /><div className="absolute -right-10 -top-20 -z-10 size-72 rounded-full border border-purple/20" /><div className="absolute -right-1 -top-10 -z-10 size-48 rounded-full border border-purple/20" />
+            <div className="flex items-center justify-between gap-3"><span className="rounded-full border border-white/80 bg-white/70 px-3 py-1.5 text-[.65rem] font-bold tracking-[.16em] text-purple-dark">ELARA / CASE STUDY</span><span className="text-xs font-semibold text-purple-dark/60">VISUAL PREVIEW</span></div>
+            <div className="relative z-10 max-w-2xl"><h3 className="mb-4 break-words font-display text-4xl font-extrabold leading-[1.02] tracking-[-.07em] text-purple-dark sm:text-6xl">{project.title}</h3><p className="mb-6 max-w-lg leading-7 text-purple-dark/75">{project.shortDescription}</p><div className="flex flex-wrap gap-2">{project.technologies.slice(0, 5).map((technology) => <span key={technology} className="rounded-full border border-white/80 bg-white/65 px-3 py-1.5 text-xs font-semibold text-purple-dark">{technology}</span>)}</div></div>
+            <p className="mb-0 mt-7 max-w-xl text-xs leading-5 text-purple-dark/65">A preview image or live deployment has not been attached to this project yet. Add a `previewImage` path in `src/data/portfolio.js` to display an actual website screenshot here.</p>
+          </div>
+        )}
+        <div className="flex flex-wrap items-center justify-between gap-3 border-t border-line px-5 py-4 sm:px-7">
+          <p className="mb-0 text-sm text-muted">Built with {project.technologies.slice(0, 3).join(', ')}{project.technologies.length > 3 ? ' and more' : ''}.</p>
+          {project.liveUrl && <a className="text-sm font-bold text-purple-dark transition hover:text-purple" href={project.liveUrl} target="_blank" rel="noreferrer">Open live website ↗</a>}
+        </div>
+      </section>
+
       <div className="space-y-5">
         <section className="rounded-2xl border border-line bg-white p-6 sm:p-8">
           <p className="mb-3 text-xs font-bold tracking-[.17em] text-purple">OVERVIEW</p><h2 className="mb-4 font-display text-2xl font-bold sm:text-3xl">About the project</h2>
