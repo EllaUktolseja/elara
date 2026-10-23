@@ -105,3 +105,8 @@
   .neural-node--7 { left: 12%; top: 4%; }
   .neural-node--8 { right: 12%; top: 4%; }
 }
+
+.project-slide { touch-action: pan-y; }
+.project-slide--next { --slide-from-x: 7%; }
+.project-slide--prev { --slide-from-x: -7%; }
+@keyframes project-slide-in { from { opacity: 0; transform: translateX(var(--slide-from-x, 7%)) scale(.995); filter: blur(2px); } to { opacity: 1; transform: translateX(0) scale(1); filter: blur(0); } }
