@@ -46,7 +46,7 @@ export default function About() {
               <span className="mt-1 grid size-10 shrink-0 place-items-center rounded-full border border-purple/15 bg-white/80 text-purple"><span className="size-2 rounded-full bg-purple shadow-[0_0_12px_#9b70ec]" /></span>
             </div>
             <div className="mb-6 flex flex-wrap items-center gap-x-3 gap-y-2 border-b border-purple/10 pb-6 text-sm">
-              <span className="font-semibold text-muted">Based in</span><span className="font-bold text-ink">{profile.location}</span><span className="text-purple/40">/</span><span className="text-muted">Indonesia</span>
+              <span className="font-semibold text-muted">Based in</span><span className="font-bold text-ink">{profile.location}</span>
             </div>
             <div className="grid grid-cols-3 gap-3 max-sm:grid-cols-1">
               {links.map((item, index) => <a className="group rounded-xl border border-white/90 bg-white/80 p-4 transition duration-300 hover:-translate-y-1 hover:border-purple/30 hover:shadow-lg hover:shadow-purple/5" href={item.href} key={item.label} target={item.external ? '_blank' : undefined} rel={item.external ? 'noreferrer' : undefined}><span className="mb-4 block text-[.65rem] font-bold tracking-[.15em] text-purple/65">0{index + 1} / CONNECT</span><span className="block font-display text-lg font-extrabold text-ink transition-colors group-hover:text-purple-dark">{item.label}</span><span className="mt-1 block text-xs leading-5 text-muted">{item.detail}</span></a>)}
