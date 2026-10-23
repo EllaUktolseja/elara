@@ -1,33 +1,132 @@
 import { Link, useParams } from 'react-router-dom'
-import { projects } from '../data/projects.js'
+import { getProjectBySlug } from '../data/portfolio.js'
 
 export default function ProjectDetail() {
   const { slug } = useParams()
-  const project = projects.find((item) => item.slug === slug)
+  const project = getProjectBySlug(slug)
 
   if (!project) {
     return (
       <section className="page-section container empty-state">
         <p className="eyebrow">PROJECT NOT FOUND</p>
-        <h1 className="page-title">This page is still <span className="gradient-text">out of reach.</span></h1>
-        <Link className="button button-primary" to="/projects">Back to projects</Link>
+        <h1 className="page-title">
+          This page is still{' '}
+          <span className="gradient-text">out of reach.</span>
+        </h1>
+        <p className="page-lead">
+          We couldn&apos;t find a project with that address. Try exploring the
+          project archive instead.
+        </p>
+        <Link className="button button-primary" to="/projects">
+          Back to projects
+        </Link>
       </section>
     )
   }
 
+  const statusLabels = {
+    completed: 'Completed',
+    ongoing: 'Ongoing',
+    planning: 'Planning',
+  }
+
   return (
-    <section className="page-section container">
-      <Link className="back-link" to="/projects">← All projects</Link>
-      <div className={`detail-art project-card--${project.tone}`}><span>{project.number}</span><strong>{project.name}</strong><i>{project.category}</i></div>
-      <div className="detail-heading">
-        <div><p className="eyebrow">{project.category} · {project.year}</p><h1 className="page-title">{project.name}<span className="brand-period">.</span></h1></div>
-        <span className={`status-pill status-${project.status.toLowerCase()}`}>{project.status}</span>
+    <section className="page-section container project-detail">
+      <Link className="back-link" to="/projects">
+        <span aria-hidden="true">←</span> Back to projects
+      </Link>
+
+      <header className="project-detail-header">
+        <p className="eyebrow">
+          PROJECT {String(project.sortOrder).padStart(2, '0')}
+        </p>
+
+        <h1 className="page-title">
+          {project.title}
+        </h1>
+
+        <p className="page-lead">
+          {project.shortDescription}
+        </p>
+
+        <div className="project-meta">
+          <span>{statusLabels[project.status] ?? project.status}</span>
+          {project.year && <span>{project.year}</span>}
+        </div>
+      </header>
+
+      <div className="project-detail-content">
+        <section className="project-detail-section">
+          <p className="eyebrow">OVERVIEW</p>
+          <h2>About the project</h2>
+          <p>{project.description}</p>
+        </section>
+
+        <section className="project-detail-section">
+          <p className="eyebrow">TECHNOLOGY</p>
+          <h2>Tools and technologies</h2>
+          <div className="tag-list">
+            {project.technologies.map((technology) => (
+              <span className="tag" key={technology}>
+                {technology}
+              </span>
+            ))}
+          </div>
+        </section>
+
+        {project.highlights?.length > 0 && (
+          <section className="project-detail-section">
+            <p className="eyebrow">HIGHLIGHTS</p>
+            <h2>Key features</h2>
+            <ul className="project-detail-list">
+              {project.highlights.map((highlight) => (
+                <li key={highlight}>{highlight}</li>
+              ))}
+            </ul>
+          </section>
+        )}
+
+        {project.currentFocus && (
+          <section className="project-detail-section">
+            <p className="eyebrow">CURRENT FOCUS</p>
+            <h2>What I&apos;m working on</h2>
+            <p>{project.currentFocus}</p>
+          </section>
+        )}
+
+        {project.milestones?.length > 0 && (
+          <section className="project-detail-section">
+            <p className="eyebrow">MILESTONES</p>
+            <h2>Project progress</h2>
+            <ol className="project-detail-list">
+              {project.milestones.map((milestone, index) => (
+                <li key={`${project.slug}-milestone-${index}`}>
+                  {typeof milestone === 'string'
+                    ? milestone
+                    : milestone.title}
+                </li>
+              ))}
+            </ol>
+          </section>
+        )}
       </div>
-      <p className="detail-summary">{project.description}</p>
-      <div className="detail-columns">
-        <div><p className="eyebrow">PROJECT HIGHLIGHTS</p><ul className="highlight-list">{project.highlights.map((item) => <li key={item}><span>↗</span>{item}</li>)}</ul></div>
-        <div><p className="eyebrow">TECHNOLOGY</p><div className="tag-list">{project.stack.map((item) => <span className="tag" key={item}>{item}</span>)}</div><p className="small-note">More implementation details will be added as the project evolves.</p></div>
-      </div>
+
+      <footer className="project-detail-footer">
+        <Link className="button button-secondary" to="/projects">
+          Explore other projects
+        </Link>
+
+        {project.repositoryUrl && (
+          <a
+            className="button button-primary"
+            href={project.repositoryUrl}
+            target="_blank"
+            rel="noreferrer"
+          >
+            View source code <span aria-hidden="true">↗</span>
+          </a>
+        )}
+      </footer>
     </section>
   )
 }
