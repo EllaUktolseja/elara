@@ -74,3 +74,34 @@
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
 }
+
+/* Gentle, viewport-triggered entrances shared by every route. */
+.scroll-reveal { opacity: 0; transform: translateY(18px); filter: blur(2px); transition: opacity .65s ease, transform .65s cubic-bezier(.2,.75,.25,1), filter .65s ease; transition-delay: var(--reveal-delay, 0ms); }
+.scroll-reveal.is-visible { opacity: 1; transform: translateY(0); filter: blur(0); }
+.neural-node { position: absolute; z-index: 10; display: grid; place-items: center; width: clamp(58px, 8vw, 78px); aspect-ratio: 1; border: 1px solid rgba(255,255,255,.9); border-radius: 999px; background: radial-gradient(circle at 28% 22%, #fff 0%, #f0e8ff 34%, #d6c0ff 75%, #b59ae9 100%); color: #50338e; font-size: clamp(.58rem, 1.1vw, .7rem); font-weight: 800; line-height: 1.15; text-align: center; padding: .4rem; box-shadow: 0 9px 26px rgba(77,49,131,.14), inset -6px -7px 13px rgba(77,49,131,.1); }
+.neural-node--1 { left: 43%; top: 3%; }
+.neural-node--2 { right: 5%; top: 23%; background: radial-gradient(circle at 28% 22%, #fff, #e5f4ff 38%, #b5d8f7 78%); color: #244f83; }
+.neural-node--3 { right: 8%; bottom: 14%; background: radial-gradient(circle at 28% 22%, #fff, #e4f8ef 38%, #a6dec8 78%); color: #215c4b; }
+.neural-node--4 { left: 39%; bottom: 2%; background: radial-gradient(circle at 28% 22%, #fff, #fff0df 38%, #f1c18d 78%); color: #75471f; }
+.neural-node--5 { left: 5%; bottom: 16%; background: radial-gradient(circle at 28% 22%, #fff, #e5f4ff 38%, #b5d8f7 78%); color: #244f83; }
+.neural-node--6 { left: 2%; top: 23%; }
+.neural-node--7 { left: 18%; top: 5%; background: radial-gradient(circle at 28% 22%, #fff, #e4f8ef 38%, #a6dec8 78%); color: #215c4b; }
+.neural-node--8 { right: 20%; top: 6%; background: radial-gradient(circle at 28% 22%, #fff, #fff0df 38%, #f1c18d 78%); color: #75471f; }
+.neural-core { animation: neural-pulse 5s ease-in-out infinite; }
+@keyframes neural-pulse { 0%,100% { box-shadow: 0 0 0 9px rgba(255,255,255,.6), 0 20px 50px rgba(85,53,158,.2); } 50% { box-shadow: 0 0 0 13px rgba(255,255,255,.42), 0 20px 60px rgba(121,83,207,.3); } }
+@media (prefers-reduced-motion: reduce) {
+  .scroll-reveal, .scroll-reveal.is-visible { opacity: 1; transform: none; filter: none; transition: none; }
+  .neural-core { animation: none; }
+  .neural-node { animation: none; }
+}
+@media (max-width: 640px) {
+  .neural-node { width: clamp(48px, 15vw, 62px); font-size: .56rem; }
+  .neural-node--1 { left: 39%; top: 1%; }
+  .neural-node--2 { right: 0; top: 24%; }
+  .neural-node--3 { right: 2%; bottom: 14%; }
+  .neural-node--4 { left: 36%; bottom: 1%; }
+  .neural-node--5 { left: 0; bottom: 14%; }
+  .neural-node--6 { left: 0; top: 24%; }
+  .neural-node--7 { left: 12%; top: 4%; }
+  .neural-node--8 { right: 12%; top: 4%; }
+}
