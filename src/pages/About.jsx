@@ -22,7 +22,7 @@ export default function About() {
         <div className="relative mx-auto w-full max-w-sm">
           <div className="absolute -inset-3 rounded-[2rem] bg-gradient-to-br from-purple/20 to-[#e8dcff] blur-xl" />
           <div className="relative overflow-hidden rounded-[2rem] border border-line bg-gradient-to-br from-[#f5efff] to-white p-3 shadow-xl shadow-purple/10">
-            <img src={profile.imageUrl} alt={`Portrait of ${profile.name}`} className="aspect-[4/5] w-full rounded-[1.4rem] object-cover" />
+            <img src={profile.imageUrl} alt={`Portrait of ${profile.name}`} loading="lazy" decoding="async" className="aspect-[4/5] w-full rounded-[1.4rem] object-cover" />
             <div className="flex items-center justify-between px-3 py-4"><span className="font-display text-lg font-extrabold">ELARA</span><span className="text-xs font-bold tracking-[.15em] text-purple">2026 / PORTFOLIO</span></div>
           </div>
         </div>
