@@ -4,9 +4,9 @@ import Footer from '../components/common/Footer.jsx'
 
 export default function MainLayout() {
   return (
-    <div className="site-shell">
+    <div className="flex min-h-screen flex-col overflow-x-clip">
       <Navbar />
-      <main className="main-content">
+      <main className="flex-1">
         <Outlet />
       </main>
       <Footer />
