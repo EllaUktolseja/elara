@@ -9,7 +9,7 @@ export default function Contact() {
   ].filter((item) => item.href)
 
   return (
-    <section className="mx-auto w-[min(1180px,calc(100%-2.5rem))] py-20 sm:py-24 max-sm:w-[calc(100%-2rem)]">
+    <section className="mx-auto w-full max-w-[1180px] px-5 sm:px-8 py-20 sm:py-24 max-sm:px-4">
       <p className="mb-5 text-xs font-bold tracking-[.17em] text-purple">CONTACT</p>
       <h1 className="mb-6 max-w-5xl font-display text-[clamp(2.8rem,6vw,5.2rem)] font-extrabold leading-[1.04] tracking-[-.07em]">Good things start <span className="text-gradient">with a conversation.</span></h1>
       <p className="mb-14 max-w-2xl text-lg leading-8 text-muted">Interested in a project, collaboration, or a professional opportunity? Feel free to connect through one of the channels below.</p>
