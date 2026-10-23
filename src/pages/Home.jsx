@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { getProjects } from '../data/portfolio.js'
 
@@ -20,6 +20,7 @@ function Eyebrow({ children, className = '' }) {
 
 export default function Home() {
   const [activeSlide, setActiveSlide] = useState(0)
+  const touchStartX = useRef(null)
   const activeProject = featuredProjects[activeSlide]
   useEffect(() => {
     if (featuredProjects.length < 2) return undefined
@@ -41,15 +42,19 @@ export default function Home() {
           </div>
           <div className="mt-9 flex items-center gap-3 text-sm text-muted"><span className="h-px w-9 bg-purple/50" />Based in Indonesia · Open to learning and collaboration</div>
         </div>
-        <div className="relative mx-auto flex aspect-square w-full max-w-[490px] items-center justify-center overflow-hidden rounded-[2.5rem] border border-[#e9e0fa] bg-gradient-to-br from-white via-[#f7f2ff] to-[#e9ddff] shadow-[0_28px_80px_rgba(79,49,139,.12)] max-lg:max-w-[430px] max-sm:rounded-[2rem]">
-          <div className="grid-dots absolute inset-0 opacity-60" />
-          <div className="absolute inset-8 rounded-full border border-purple/10" />
-          <div className="animate-orbit absolute inset-[14%] rounded-full border border-dashed border-purple/25"><span className="absolute left-[15%] top-[12%] size-3 rounded-full bg-purple shadow-[0_0_18px_#a78bfa]" /></div>
-          <div className="animate-orbit absolute inset-[25%] rounded-full border border-purple/20 [animation-direction:reverse]"><span className="absolute bottom-[12%] right-[8%] size-2 rounded-full bg-[#c4a5fd]" /></div>
-          <div className="animate-float relative grid size-36 place-items-center rounded-[2.5rem] bg-gradient-to-br from-purple-dark via-purple to-[#b28af4] shadow-[0_22px_50px_rgba(93,61,163,.32)] ring-8 ring-white/60 sm:size-44 sm:rounded-[3rem]"><span className="font-display text-7xl font-extrabold tracking-[-.1em] text-white sm:text-8xl">E</span></div>
-          <span className="absolute left-7 top-8 rounded-full border border-white/80 bg-white/75 px-3 py-2 text-[.62rem] font-bold tracking-[.16em] text-purple-dark shadow-sm backdrop-blur">CREATIVE THINKING</span>
-          <span className="absolute bottom-8 right-7 rounded-full border border-white/80 bg-white/75 px-3 py-2 text-[.62rem] font-bold tracking-[.16em] text-purple-dark shadow-sm backdrop-blur">BUILT WITH INTENTION</span>
-          <span className="absolute right-[18%] top-[24%] text-2xl text-purple/70">✳</span><span className="absolute bottom-[23%] left-[18%] text-xl text-purple/60">✦</span>
+        <div className="relative mx-auto flex aspect-square w-full max-w-[490px] items-center justify-center overflow-hidden rounded-[2.5rem] border border-[#e9e0fa] bg-gradient-to-br from-white via-[#f7f2ff] to-[#e9ddff] shadow-[0_28px_80px_rgba(79,49,139,.12)] max-lg:max-w-[430px] max-sm:rounded-[2rem]" role="img" aria-label="A small neural atom illustration connecting core technologies">
+          <div className="grid-dots absolute inset-0 opacity-45" />
+          <div className="absolute inset-[12%] rounded-full border border-dashed border-purple/15" />
+          <div className="absolute inset-[23%] rounded-full border border-purple/15" />
+          <svg className="absolute inset-[10%] h-[80%] w-[80%] overflow-visible" viewBox="0 0 100 100" aria-hidden="true">
+            <g stroke="#a78bfa" strokeOpacity=".58" strokeWidth=".45">
+              <line x1="50" y1="50" x2="46" y2="8" /><line x1="50" y1="50" x2="85" y2="28" /><line x1="50" y1="50" x2="87" y2="76" /><line x1="50" y1="50" x2="47" y2="94" /><line x1="50" y1="50" x2="13" y2="77" /><line x1="50" y1="50" x2="11" y2="31" /><line x1="50" y1="50" x2="25" y2="12" /><line x1="50" y1="50" x2="75" y2="13" />
+            </g>
+            <g fill="#b99aff"><circle cx="46" cy="8" r="1.3" /><circle cx="85" cy="28" r="1.3" /><circle cx="87" cy="76" r="1.3" /><circle cx="47" cy="94" r="1.3" /><circle cx="13" cy="77" r="1.3" /><circle cx="11" cy="31" r="1.3" /><circle cx="25" cy="12" r="1.3" /><circle cx="75" cy="13" r="1.3" /></g>
+          </svg>
+          <span className="neural-node neural-node--1">React</span><span className="neural-node neural-node--2">JavaScript</span><span className="neural-node neural-node--3">Node.js</span><span className="neural-node neural-node--4">Python</span><span className="neural-node neural-node--5">Docker</span><span className="neural-node neural-node--6">TypeScript</span><span className="neural-node neural-node--7">PostgreSQL</span><span className="neural-node neural-node--8">Tailwind</span>
+          <div className="neural-core relative z-20 grid size-24 place-items-center rounded-full border border-white/80 bg-gradient-to-br from-purple-dark via-purple to-[#b28af4] text-white shadow-[0_20px_50px_rgba(85,53,158,.24)] ring-[9px] ring-white/60 sm:size-28"><span className="font-display text-5xl font-extrabold tracking-[-.1em]">E.</span></div>
+          <span className="absolute bottom-5 left-0 right-0 text-center text-[.6rem] font-bold tracking-[.2em] text-purple-dark/55">CONNECTED BY CURIOSITY</span>
         </div>
       </section>
 
@@ -77,7 +82,7 @@ export default function Home() {
             <div><Eyebrow>THE WORK, IN MOTION</Eyebrow><h2 className="mb-0 font-display text-4xl font-extrabold tracking-[-.06em] sm:text-5xl">A closer look at <span className="text-gradient">what I build.</span></h2></div>
             <Link className="font-bold text-purple-dark transition hover:text-purple" to="/projects">Browse all projects</Link>
           </div>
-          {activeProject && <div key={activeProject.slug} className="project-slide grid grid-cols-[.92fr_1.08fr] overflow-hidden rounded-[2rem] border border-white bg-white shadow-[0_24px_80px_rgba(66,42,112,.10)] max-lg:grid-cols-1" aria-live="polite">
+          {activeProject && <div key={activeProject.slug} className="project-slide grid grid-cols-[.92fr_1.08fr] overflow-hidden rounded-[2rem] border border-white bg-white shadow-[0_24px_80px_rgba(66,42,112,.10)] max-lg:grid-cols-1" aria-live="polite" onTouchStart={(event) => { touchStartX.current = event.changedTouches[0].clientX }} onTouchEnd={(event) => { if (touchStartX.current === null) return; const distance = event.changedTouches[0].clientX - touchStartX.current; if (Math.abs(distance) > 45) showSlide(activeSlide + (distance < 0 ? 1 : -1)); touchStartX.current = null }}>
             <div className={'project-stage relative isolate flex min-h-[390px] flex-col justify-between overflow-hidden bg-gradient-to-br p-8 sm:p-10 ' + slideTones[activeSlide % slideTones.length]}>
               <div className="grid-dots absolute inset-0 -z-10 opacity-50" /><div className="absolute -right-16 -top-16 size-72 rounded-full border border-purple/20" /><div className="absolute -right-2 top-2 size-48 rounded-full border border-purple/20" /><div className="absolute bottom-12 right-14 size-24 rounded-full bg-white/70 blur-2xl" />
               <div className="flex items-center justify-between gap-4"><span className="text-xs font-bold tracking-[.18em] text-purple-dark/70">FEATURED TRANSMISSION</span><span className="rounded-full border border-white/80 bg-white/70 px-3 py-1.5 text-xs font-bold text-purple-dark">{activeProject.status}</span></div>
