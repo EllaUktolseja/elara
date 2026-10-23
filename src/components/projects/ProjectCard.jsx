@@ -38,7 +38,7 @@ export default function ProjectCard({ project }) {
           ))}
         </div>
         <Link className="mt-auto inline-flex w-fit items-center gap-2 font-bold text-purple-dark transition hover:gap-3" to={`/projects/${project.slug}`}>
-          Explore project <span aria-hidden="true">↗</span>
+          Explore project 
         </Link>
       </div>
     </article>
