@@ -40,22 +40,22 @@ export default function Home() {
           <div className="flex flex-wrap gap-3">
             <Link className="inline-flex min-h-12 items-center justify-center rounded-xl bg-gradient-to-r from-purple-dark to-purple px-5 font-bold text-white shadow-lg shadow-purple/20 transition hover:-translate-y-0.5 hover:shadow-xl" to="/projects">Explore my work</Link>
             <Link className="inline-flex min-h-12 items-center justify-center rounded-xl border border-line bg-white px-5 font-bold text-ink transition hover:-translate-y-0.5 hover:border-purple/40" to="/about">More about me</Link>
+            <a className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-[#e2d7f5] bg-[#f8f5ff] px-5 font-bold text-purple-dark transition hover:-translate-y-0.5 hover:border-purple/50 hover:bg-[#f1eaff]" href="/cv.pdf" target="_blank" rel="noreferrer">View CV <span aria-hidden="true">↗</span></a>
           </div>
           <div className="mt-9 flex items-center gap-3 text-sm text-muted"><span className="h-px w-9 bg-purple/50" />Based in Indonesia · Open to learning and collaboration</div>
         </div>
-        <div className="relative mx-auto flex aspect-square w-full max-w-[490px] items-center justify-center overflow-hidden rounded-[2.5rem] border border-[#e9e0fa] bg-gradient-to-br from-white via-[#f7f2ff] to-[#e9ddff] shadow-[0_28px_80px_rgba(79,49,139,.12)] max-lg:max-w-[430px] max-sm:rounded-[2rem]" role="img" aria-label="A small neural atom illustration connecting core technologies">
+        <div className="relative mx-auto flex aspect-square w-full max-w-[490px] items-center justify-center overflow-hidden rounded-[2.5rem] border border-[#e9e0fa] bg-gradient-to-br from-white via-[#f7f2ff] to-[#e9ddff] shadow-[0_28px_80px_rgba(79,49,139,.12)] max-lg:max-w-[430px] max-sm:rounded-[2rem]" aria-label="Abstract Elara orbital emblem">
           <div className="grid-dots absolute inset-0 opacity-45" />
-          <div className="absolute inset-[12%] rounded-full border border-dashed border-purple/15" />
-          <div className="absolute inset-[23%] rounded-full border border-purple/15" />
-          <svg className="absolute inset-[10%] h-[80%] w-[80%] overflow-visible" viewBox="0 0 100 100" aria-hidden="true">
-            <g stroke="#a78bfa" strokeOpacity=".58" strokeWidth=".45">
-              <line x1="50" y1="50" x2="46" y2="8" /><line x1="50" y1="50" x2="85" y2="28" /><line x1="50" y1="50" x2="87" y2="76" /><line x1="50" y1="50" x2="47" y2="94" /><line x1="50" y1="50" x2="13" y2="77" /><line x1="50" y1="50" x2="11" y2="31" /><line x1="50" y1="50" x2="25" y2="12" /><line x1="50" y1="50" x2="75" y2="13" />
-            </g>
-            <g fill="#b99aff"><circle cx="46" cy="8" r="1.3" /><circle cx="85" cy="28" r="1.3" /><circle cx="87" cy="76" r="1.3" /><circle cx="47" cy="94" r="1.3" /><circle cx="13" cy="77" r="1.3" /><circle cx="11" cy="31" r="1.3" /><circle cx="25" cy="12" r="1.3" /><circle cx="75" cy="13" r="1.3" /></g>
-          </svg>
-          <span className="neural-node neural-node--1">React</span><span className="neural-node neural-node--2">JavaScript</span><span className="neural-node neural-node--3">Node.js</span><span className="neural-node neural-node--4">Python</span><span className="neural-node neural-node--5">Docker</span><span className="neural-node neural-node--6">TypeScript</span><span className="neural-node neural-node--7">PostgreSQL</span><span className="neural-node neural-node--8">Tailwind</span>
-          <div className="neural-core relative z-20 grid size-24 place-items-center rounded-full border border-white/80 bg-gradient-to-br from-purple-dark via-purple to-[#b28af4] text-white shadow-[0_20px_50px_rgba(85,53,158,.24)] ring-[9px] ring-white/60 sm:size-28"><span className="font-display text-5xl font-extrabold tracking-[-.1em]">E.</span></div>
-          <span className="absolute bottom-5 left-0 right-0 text-center text-[.6rem] font-bold tracking-[.2em] text-purple-dark/55">CONNECTED BY CURIOSITY</span>
+          <div className="absolute size-[76%] rounded-full border border-purple/15" />
+          <div className="absolute size-[58%] rounded-full border border-dashed border-purple/25" />
+          <div className="absolute h-[82%] w-[38%] rotate-[35deg] rounded-[50%] border border-purple/25" />
+          <div className="absolute h-[82%] w-[38%] -rotate-[35deg] rounded-[50%] border border-purple/20" />
+          <span className="absolute right-[20%] top-[23%] size-3 rounded-full bg-[#c4a5fd] shadow-[0_0_22px_rgba(167,139,250,.8)]" />
+          <span className="absolute bottom-[22%] left-[22%] size-2.5 rounded-full bg-[#9bcbb8] shadow-[0_0_18px_rgba(155,203,184,.75)]" />
+          <div className="relative z-10 grid size-36 place-items-center rounded-full border border-white/80 bg-gradient-to-br from-purple-dark via-purple to-[#b28af4] text-white shadow-[0_22px_55px_rgba(93,61,163,.3)] ring-[12px] ring-white/55 sm:size-44">
+            <span className="font-display text-7xl font-extrabold tracking-[-.12em] sm:text-8xl">E.</span>
+          </div>
+          <span className="absolute bottom-7 left-0 right-0 text-center text-[.62rem] font-bold tracking-[.2em] text-purple-dark/55">IDEAS IN ORBIT</span>
         </div>
       </section>
 
