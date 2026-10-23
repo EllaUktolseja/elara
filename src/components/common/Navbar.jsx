@@ -46,7 +46,7 @@ export default function Navbar() {
         </div>
 
         <NavLink className="inline-flex shrink-0 items-center gap-2 rounded-xl border border-[#ddd3f5] bg-white px-4 py-3 text-sm font-bold text-purple-dark transition hover:-translate-y-0.5 hover:bg-lilac max-md:ml-auto max-md:hidden" to="/contact">
-          Let&apos;s talk <span aria-hidden="true">↗</span>
+          Let&apos;s talk 
         </NavLink>
       </nav>
     </header>
