@@ -38,7 +38,7 @@ export default function About() {
             {profile.githubUrl && <a className="font-bold text-purple-dark hover:underline" href={profile.githubUrl} target="_blank" rel="noreferrer">GitHub ↗</a>}
             {profile.linkedinUrl && <a className="font-bold text-purple-dark hover:underline" href={profile.linkedinUrl} target="_blank" rel="noreferrer">LinkedIn ↗</a>}
             {profile.email && <a className="font-bold text-purple-dark hover:underline" href={`mailto:${profile.email}`}>Email me ↗</a>}
-            <Link className="font-bold text-purple-dark hover:underline" to="/contact">Contact page ↗</Link>
+            <Link className="font-bold text-purple-dark hover:underline" to="/contact">Contact page </Link>
           </div>
         </div>
       </div>
