@@ -38,7 +38,7 @@ export default function Experience() {
   const sortedExperiences = [...experiences].sort((a, b) => new Date(b.startDate) - new Date(a.startDate))
 
   return (
-    <section className="mx-auto w-[min(1000px,calc(100%-2.5rem))] py-20 sm:py-24 max-sm:w-[calc(100%-2rem)]">
+    <section className="mx-auto w-full max-w-[1000px] px-5 sm:px-8 py-20 sm:py-24 max-sm:px-4">
       <p className="mb-5 text-xs font-bold tracking-[.17em] text-purple">CAREER & EDUCATION</p>
       <h1 className="mb-6 max-w-4xl font-display text-[clamp(2.8rem,6vw,5.2rem)] font-extrabold leading-[1.04] tracking-[-.07em]">Learning through <span className="text-gradient">experience.</span></h1>
       <p className="mb-14 max-w-2xl text-lg leading-8 text-muted">A record of the roles, responsibilities, and learning experiences shaping my professional journey.</p>
