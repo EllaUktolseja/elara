@@ -18,7 +18,6 @@ export default function ProjectCard({ project }) {
           <div className="absolute right-9 top-10 size-20 rounded-full bg-white/50 blur-2xl transition duration-500 group-hover:scale-150" />
           <span className="absolute left-6 top-6 text-xs font-bold tracking-[.2em] text-purple-dark/70">{String(project.sortOrder).padStart(2, '0')} / ELARA</span>
           <span className="project-card__title relative z-10 max-w-[80%] break-words font-display text-3xl font-extrabold leading-tight tracking-[-.06em] text-purple-dark transition duration-500 sm:text-4xl">{project.title}</span>
-          <span className="absolute bottom-6 right-6 text-xs font-bold tracking-[.14em] text-purple-dark/0 transition duration-300 group-hover:text-purple-dark">OPEN PROJECT</span>
         </div>
         <div className="flex flex-1 flex-col p-6 sm:p-7">
           <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
