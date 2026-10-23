@@ -14,7 +14,7 @@ export default function ProjectDetail() {
 
   if (!project) {
     return (
-      <section className="mx-auto w-[min(1180px,calc(100%-2.5rem))] py-24 max-sm:w-[calc(100%-2rem)]">
+      <section className="mx-auto w-full max-w-[1180px] px-5 sm:px-8 py-24 max-sm:px-4">
         <p className="mb-5 text-xs font-bold tracking-[.17em] text-purple">PROJECT NOT FOUND</p>
         <h1 className="mb-6 max-w-3xl font-display text-5xl font-extrabold leading-tight tracking-[-.07em]">This page is still <span className="text-gradient">out of reach.</span></h1>
         <p className="mb-8 max-w-xl text-lg leading-8 text-muted">We couldn&apos;t find a project with that address. Try exploring the project archive instead.</p>
@@ -28,7 +28,7 @@ export default function ProjectDetail() {
   const progress = typeof project.progress === 'number' ? Math.min(100, Math.max(0, project.progress)) : null
 
   return (
-    <section className="mx-auto w-[min(1000px,calc(100%-2.5rem))] py-12 sm:py-16 max-sm:w-[calc(100%-2rem)]">
+    <section className="mx-auto w-full max-w-[1000px] px-5 sm:px-8 py-12 sm:py-16 max-sm:px-4">
       <Link className="mb-9 inline-flex items-center gap-2 text-sm font-bold text-purple-dark transition hover:-translate-x-1" to="/projects"><span aria-hidden="true">←</span> Back to projects</Link>
       <header className="relative isolate mb-12 overflow-hidden rounded-[2rem] border border-[#e5daf9] bg-gradient-to-br from-white via-[#f5efff] to-[#e9ddff] p-7 sm:p-12">
         <div className="grid-dots absolute inset-0 -z-10 opacity-50" />
