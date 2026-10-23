@@ -17,7 +17,7 @@ function Eyebrow({ children, className = '' }) {
 export default function Home() {
   return (
     <>
-      <section className="mx-auto grid min-h-[620px] w-[min(1180px,calc(100%-2.5rem))] grid-cols-[1.1fr_.9fr] items-center gap-12 py-20 max-lg:min-h-0 max-lg:grid-cols-1 max-lg:gap-10 max-lg:py-16 max-sm:w-[calc(100%-2rem)]">
+      <section className="mx-auto grid min-h-[620px] w-full max-w-[1180px] px-5 sm:px-8 grid-cols-[1.1fr_.9fr] items-center gap-12 py-20 max-lg:min-h-0 max-lg:grid-cols-1 max-lg:gap-10 max-lg:py-16 max-sm:px-4">
         <div className="relative z-10">
           <Eyebrow><span className="size-2 rounded-full bg-emerald-400 shadow-[0_0_0_4px_#e4f7ed]" /> AVAILABLE FOR OPPORTUNITIES</Eyebrow>
           <h1 className="mb-6 max-w-3xl font-display text-[clamp(3.2rem,6.5vw,5.8rem)] font-extrabold leading-[1.02] tracking-[-.07em] text-ink max-sm:text-[clamp(2.8rem,13vw,4rem)]">
@@ -45,14 +45,14 @@ export default function Home() {
       </section>
 
       <section className="border-y border-line bg-white/80">
-        <div className="mx-auto grid w-[min(1180px,calc(100%-2.5rem))] grid-cols-[.7fr_1.3fr_auto] items-center gap-8 py-7 max-lg:grid-cols-1 max-lg:gap-3 max-sm:w-[calc(100%-2rem)]">
+        <div className="mx-auto grid w-full max-w-[1180px] px-5 sm:px-8 grid-cols-[.7fr_1.3fr_auto] items-center gap-8 py-7 max-lg:grid-cols-1 max-lg:gap-3 max-sm:px-4">
           <Eyebrow className="mb-0">A LITTLE ABOUT MY APPROACH</Eyebrow>
           <p className="mb-0 text-lg leading-7 text-ink">Good digital work sits at the intersection of <strong>clarity, curiosity, and craft.</strong></p>
           <Link className="inline-flex items-center gap-2 whitespace-nowrap font-bold text-purple-dark hover:gap-3" to="/about">Get to know me <span aria-hidden="true">↗</span></Link>
         </div>
       </section>
 
-      <section className="mx-auto w-[min(1180px,calc(100%-2.5rem))] py-24 max-sm:w-[calc(100%-2rem)] max-sm:py-16">
+      <section className="mx-auto w-full max-w-[1180px] px-5 sm:px-8 py-24 max-sm:px-4 max-sm:py-16">
         <div className="mb-10 flex items-end justify-between gap-8 max-md:flex-col max-md:items-start">
           <div><Eyebrow>WHAT I VALUE</Eyebrow><h2 className="mb-0 font-display text-4xl font-extrabold tracking-[-.06em] sm:text-5xl">Build with <span className="text-gradient">intention.</span></h2></div>
           <p className="mb-1 max-w-md leading-7 text-muted">I care about the details, but I never lose sight of the people and purpose behind a product.</p>
@@ -63,7 +63,7 @@ export default function Home() {
       </section>
 
       <section className="border-y border-line bg-[#f6f2fc]">
-        <div className="mx-auto w-[min(1180px,calc(100%-2.5rem))] py-24 max-sm:w-[calc(100%-2rem)] max-sm:py-16">
+        <div className="mx-auto w-full max-w-[1180px] px-5 sm:px-8 py-24 max-sm:px-4 max-sm:py-16">
           <div className="mb-10 flex items-end justify-between gap-6 max-md:flex-col max-md:items-start">
             <div><Eyebrow>SELECTED WORK</Eyebrow><h2 className="mb-0 font-display text-4xl font-extrabold tracking-[-.06em] sm:text-5xl">Projects in <span className="text-gradient">progress.</span></h2></div>
             <Link className="inline-flex items-center gap-2 font-bold text-purple-dark hover:gap-3" to="/projects">View all projects <span aria-hidden="true">↗</span></Link>
@@ -72,7 +72,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mx-auto flex w-[min(1180px,calc(100%-2.5rem))] items-center justify-between gap-8 py-20 max-md:flex-col max-md:items-start max-sm:w-[calc(100%-2rem)] max-sm:py-14">
+      <section className="mx-auto flex w-full max-w-[1180px] px-5 sm:px-8 items-center justify-between gap-8 py-20 max-md:flex-col max-md:items-start max-sm:px-4 max-sm:py-14">
         <div><Eyebrow>HAVE SOMETHING IN MIND?</Eyebrow><h2 className="mb-0 max-w-2xl font-display text-4xl font-extrabold leading-tight tracking-[-.06em] sm:text-5xl">Let&apos;s make something <span className="text-gradient">meaningful.</span></h2></div>
         <Link className="inline-flex min-h-12 shrink-0 items-center gap-3 rounded-xl bg-gradient-to-r from-purple-dark to-purple px-5 font-bold text-white shadow-lg shadow-purple/20 transition hover:-translate-y-0.5" to="/contact">Get in touch <span aria-hidden="true">↗</span></Link>
       </section>
