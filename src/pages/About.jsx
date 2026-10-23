@@ -9,7 +9,7 @@ export default function About() {
   ]
 
   return (
-    <section className="mx-auto w-[min(1180px,calc(100%-2.5rem))] py-20 sm:py-24 max-sm:w-[calc(100%-2rem)]">
+    <section className="mx-auto w-full max-w-[1180px] px-5 sm:px-8 py-20 sm:py-24 max-sm:px-4">
       <p className="mb-5 text-xs font-bold tracking-[.17em] text-purple">ABOUT ME</p>
       <h1 className="mb-14 max-w-4xl font-display text-[clamp(2.8rem,6vw,5.2rem)] font-extrabold leading-[1.04] tracking-[-.07em]">Curious by nature.<br /><span className="text-gradient">Intentional by design.</span></h1>
       <div className="grid grid-cols-[.8fr_1.2fr] items-start gap-14 max-lg:grid-cols-1 max-lg:gap-10">
