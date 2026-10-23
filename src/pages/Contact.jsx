@@ -29,7 +29,7 @@ export default function Contact() {
             <a className="group flex items-center gap-4 rounded-2xl border border-line bg-white p-5 transition hover:-translate-y-0.5 hover:border-purple/30 hover:shadow-lg hover:shadow-purple/5 sm:gap-5 sm:p-6" key={item.label} href={item.href} target={item.href.startsWith('http') ? '_blank' : undefined} rel={item.href.startsWith('http') ? 'noreferrer' : undefined}>
               <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-[#f4efff] font-display text-sm font-extrabold text-purple-dark">{String(index + 1).padStart(2, '0')}</span>
               <span className="min-w-0 flex-1"><span className="mb-1 block text-xs font-bold uppercase tracking-[.13em] text-purple">{item.label}</span><strong className="block break-words font-display text-lg font-bold text-ink">{item.value}</strong><span className="mt-1 block text-sm text-muted">{item.description}</span></span>
-              <span className="text-xl text-purple transition group-hover:-translate-y-1 group-hover:translate-x-1" aria-hidden="true">↗</span>
+              <span className="text-xs font-bold tracking-[.12em] text-purple/0 transition-colors group-hover:text-purple">CONNECT</span>
             </a>
           ))}
         </div>
