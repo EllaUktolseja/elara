@@ -20,6 +20,7 @@ function Eyebrow({ children, className = '' }) {
 
 export default function Home() {
   const [activeSlide, setActiveSlide] = useState(0)
+  const [slideDirection, setSlideDirection] = useState(1)
   const touchStartX = useRef(null)
   const activeProject = featuredProjects[activeSlide]
   useEffect(() => {
@@ -27,7 +28,7 @@ export default function Home() {
     const timer = window.setInterval(() => setActiveSlide((current) => (current + 1) % featuredProjects.length), 6500)
     return () => window.clearInterval(timer)
   }, [])
-  const showSlide = (nextIndex) => setActiveSlide((nextIndex + featuredProjects.length) % featuredProjects.length)
+  const showSlide = (nextIndex, direction = 1) => { setSlideDirection(direction); setActiveSlide((nextIndex + featuredProjects.length) % featuredProjects.length) }
 
   return (
     <>
@@ -82,7 +83,7 @@ export default function Home() {
             <div><Eyebrow>THE WORK, IN MOTION</Eyebrow><h2 className="mb-0 font-display text-4xl font-extrabold tracking-[-.06em] sm:text-5xl">A closer look at <span className="text-gradient">what I build.</span></h2></div>
             <Link className="font-bold text-purple-dark transition hover:text-purple" to="/projects">Browse all projects</Link>
           </div>
-          {activeProject && <div key={activeProject.slug} className="project-slide grid grid-cols-[.92fr_1.08fr] overflow-hidden rounded-[2rem] border border-white bg-white shadow-[0_24px_80px_rgba(66,42,112,.10)] max-lg:grid-cols-1" aria-live="polite" onTouchStart={(event) => { touchStartX.current = event.changedTouches[0].clientX }} onTouchEnd={(event) => { if (touchStartX.current === null) return; const distance = event.changedTouches[0].clientX - touchStartX.current; if (Math.abs(distance) > 45) showSlide(activeSlide + (distance < 0 ? 1 : -1)); touchStartX.current = null }}>
+          {activeProject && <div key={activeProject.slug} className={"project-slide " + (slideDirection > 0 ? "project-slide--next " : "project-slide--prev ") + "grid grid-cols-[.92fr_1.08fr] overflow-hidden rounded-[2rem] border border-white bg-white shadow-[0_24px_80px_rgba(66,42,112,.10)] max-lg:grid-cols-1" aria-live="polite" onTouchStart={(event) => { touchStartX.current = event.changedTouches[0].clientX }} onTouchEnd={(event) => { if (touchStartX.current === null) return; const distance = event.changedTouches[0].clientX - touchStartX.current; if (Math.abs(distance) > 45) showSlide(activeSlide + (distance < 0 ? 1 : -1), distance < 0 ? 1 : -1); touchStartX.current = null }}>
             <div className={'project-stage relative isolate flex min-h-[390px] flex-col justify-between overflow-hidden bg-gradient-to-br p-8 sm:p-10 ' + slideTones[activeSlide % slideTones.length]}>
               <div className="grid-dots absolute inset-0 -z-10 opacity-50" /><div className="absolute -right-16 -top-16 size-72 rounded-full border border-purple/20" /><div className="absolute -right-2 top-2 size-48 rounded-full border border-purple/20" /><div className="absolute bottom-12 right-14 size-24 rounded-full bg-white/70 blur-2xl" />
               <div className="flex items-center justify-between gap-4"><span className="text-xs font-bold tracking-[.18em] text-purple-dark/70">FEATURED TRANSMISSION</span><span className="rounded-full border border-white/80 bg-white/70 px-3 py-1.5 text-xs font-bold text-purple-dark">{activeProject.status}</span></div>
@@ -94,7 +95,7 @@ export default function Home() {
               <div className="flex flex-wrap items-center justify-between gap-5 border-t border-line pt-6"><Link className="inline-flex min-h-11 items-center rounded-lg bg-purple-dark px-5 font-bold text-white transition hover:bg-purple" to={'/projects/' + activeProject.slug}>View project</Link><div className="flex flex-wrap gap-x-4 gap-y-2" aria-label="Choose featured project">{featuredProjects.map((project, index) => <button key={project.slug} type="button" aria-pressed={index === activeSlide} onClick={() => showSlide(index)} className={"border-b-2 pb-1 text-xs font-bold transition-colors " + (index === activeSlide ? "border-purple text-purple-dark" : "border-transparent text-muted hover:text-purple")}>{project.title}</button>)}</div></div>
             </div>
           </div>}
-          <div className="mt-5 flex items-center justify-between gap-4"><p className="mb-0 text-sm text-muted">Highlights rotate automatically. Select a title to explore a project.</p><div className="flex gap-5 text-sm font-bold text-purple-dark"><button className="transition hover:text-purple" type="button" onClick={() => showSlide(activeSlide - 1)}>Previous</button><button className="transition hover:text-purple" type="button" onClick={() => showSlide(activeSlide + 1)}>Next</button></div></div>
+          <div className="mt-5 flex items-center justify-between gap-4"><p className="mb-0 text-sm text-muted">Highlights rotate automatically. Select a title to explore a project.</p><div className="flex gap-5 text-sm font-bold text-purple-dark"><button className="transition hover:text-purple" type="button" onClick={() => showSlide(activeSlide - 1, -1)}>Previous</button><button className="transition hover:text-purple" type="button" onClick={() => showSlide(activeSlide + 1, 1)}>Next</button></div></div>
         </div>
       </section>
 
