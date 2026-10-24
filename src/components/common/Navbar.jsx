@@ -3,9 +3,8 @@ import { NavLink } from 'react-router-dom'
 
 const links = [
   { to: '/', label: 'Home', end: true },
-  { to: '/about', label: 'About' },
-  { to: '/experience', label: 'Experience' },
   { to: '/skills', label: 'Skills' },
+  { to: '/experience', label: 'Experience' },
   { to: '/projects', label: 'Projects' },
   { to: '/contact', label: 'Contact' },
 ]
@@ -15,7 +14,7 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-30 border-b border-line/80 bg-[#fbfaff]/90 backdrop-blur-xl">
-      <nav className="mx-auto flex w-full max-w-[1180px] px-5 sm:px-8 min-h-[76px] items-center justify-between gap-5 max-md:px-4 max-md:flex-wrap max-md:py-3" aria-label="Main navigation">
+      <nav className="mx-auto flex min-h-[76px] w-full max-w-[1180px] items-center justify-between gap-5 px-5 sm:px-8 max-md:flex-wrap max-md:px-4 max-md:py-3" aria-label="Main navigation">
         <NavLink className="inline-flex shrink-0 items-center gap-2.5 font-display text-xl font-extrabold tracking-[-.07em]" to="/" aria-label="Elara home" onClick={() => setMenuOpen(false)}>
           <span className="grid size-9 place-items-center rounded-xl bg-gradient-to-br from-purple-dark to-purple text-base text-white shadow-lg shadow-purple/20">E</span>
           <span>elara<span className="text-purple">.</span></span>
@@ -46,7 +45,7 @@ export default function Navbar() {
         </div>
 
         <NavLink className="inline-flex shrink-0 items-center gap-2 rounded-xl border border-[#ddd3f5] bg-white px-4 py-3 text-sm font-bold text-purple-dark transition hover:-translate-y-0.5 hover:bg-lilac max-md:ml-auto max-md:hidden" to="/contact">
-          Let&apos;s talk 
+          Let&apos;s talk
         </NavLink>
       </nav>
     </header>
