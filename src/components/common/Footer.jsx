@@ -20,7 +20,7 @@ export default function Footer() {
               aria-label="Elara Website - Home"
             >
               <img
-                src="/public/logo.svg"
+                src="/logo.svg"
                 alt=""
                 className="size-9 object-contain"
               />
