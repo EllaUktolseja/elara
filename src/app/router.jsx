@@ -1,4 +1,4 @@
-import { createBrowserRouter } from 'react-router-dom'
+import { createBrowserRouter, Navigate } from 'react-router-dom'
 import MainLayout from '../layouts/MainLayout.jsx'
 import Home from '../pages/Home.jsx'
 import Experience from '../pages/Experience.jsx'
@@ -13,6 +13,7 @@ export const router = createBrowserRouter([
     element: <MainLayout />,
     children: [
       { index: true, element: <Home /> },
+      { path: 'about', element: <Navigate to="/contact" replace /> },
       { path: 'experience', element: <Experience /> },
       { path: 'skills', element: <Skills /> },
       { path: 'projects', element: <Projects /> },
