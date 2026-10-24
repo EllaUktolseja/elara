@@ -94,6 +94,8 @@ export const projects = [
   {
     title: "Realla Web",
     slug: "realla-web",
+    projectType: "Personal project",
+    goal: "Present professional identity, experience, technical skills, and selected work in a cohesive portfolio.",
     status: "completed",
     shortDescription:
       "A portfolio platform presenting professional identity, experience, technical skills, and project case studies.",
@@ -116,6 +118,8 @@ export const projects = [
   {
     title: "Rookees",
     slug: "rookees",
+    projectType: "Group project",
+    goal: "Introduce the browkies product, showcase its presentation, and make it easy for customers to submit reviews or place orders.",
     status: "ongoing",
     shortDescription:
       "A youthful product showcase for a brownie-cookie treat, designed to introduce the product and connect with potential customers.",
@@ -130,6 +134,7 @@ export const projects = [
   {
     title: "GY-O-REAL E-Commerce",
     slug: "gy-o-real-e-commerce",
+    goal: "Build an e-commerce experience with a storefront, API, and relational data foundation.",
     status: "ongoing",
     shortDescription:
       "A full-stack e-commerce platform with a modern storefront, API, and relational database.",
@@ -166,6 +171,7 @@ export const projects = [
   {
     title: "FoodFoundry",
     slug: "foodfoundry",
+    goal: "Showcase baked products and collect community feedback through a dedicated web experience.",
     status: "planning",
     shortDescription:
       "A planned cookie showcase and community feedback platform for gathering real-world product feedback.",
@@ -180,6 +186,7 @@ export const projects = [
   {
     title: "Food Waste",
     slug: "food-waste",
+    goal: "Connect customers with discounted surplus food to help make excess food more accessible and reduce waste.",
     status: "completed",
     shortDescription:
       "A marketplace prototype connecting users with discounted surplus food.",
@@ -194,6 +201,7 @@ export const projects = [
   {
     title: "Veritas",
     slug: "veritas",
+    goal: "Help users assess potentially misleading news through text analysis and machine-learning workflows.",
     status: "completed",
     shortDescription:
       "A machine learning platform for analyzing potentially misleading news content.",
@@ -215,6 +223,7 @@ export const projects = [
   {
     title: "Affili.io",
     slug: "affilio",
+    goal: "Support affiliate marketers in exploring product opportunities through market and trend information.",
     status: "completed",
     shortDescription:
       "A market intelligence concept for affiliate marketers evaluating product opportunities.",
@@ -229,6 +238,7 @@ export const projects = [
   {
     title: "JobSeek",
     slug: "jobseek",
+    goal: "Recommend job opportunities that align with a user profile using a trained model.",
     status: "completed",
     shortDescription:
       "A machine learning application for recommending relevant job opportunities.",
@@ -243,6 +253,7 @@ export const projects = [
   {
     title: "Gradia",
     slug: "gradia",
+    goal: "Explore how AI-assisted workflows could support academic grading and assessment.",
     status: "planning",
     shortDescription:
       "A planned AI-assisted grading platform for academic assessment workflows.",
@@ -257,6 +268,7 @@ export const projects = [
   {
     title: "Rewoven",
     slug: "rewoven",
+    goal: "Explore a digital workflow for reuse and sustainable product transformation.",
     status: "planning",
     shortDescription:
       "A planned digital platform exploring reuse and sustainable product workflows.",
@@ -271,6 +283,7 @@ export const projects = [
   {
     title: "ChainPulse",
     slug: "chainpulse",
+    goal: "Surface service health, events, and operational signals in a monitoring dashboard.",
     status: "planning",
     shortDescription:
       "A planned monitoring platform for service health and operational visibility.",
