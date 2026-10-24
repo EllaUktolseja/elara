@@ -25,10 +25,10 @@ export default function Navbar() {
           onClick={() => setMenuOpen(false)}
         >
           <img
-            src="/public/logo.svg"
-            alt="Elara Logo"
+            src="/logo.svg"
+            alt=""
             className="size-9 object-contain"
-          />{" "}
+          />
           <span>
             elara<span className="text-purple">.</span>
           </span>
