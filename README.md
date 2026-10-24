@@ -1,18 +1,19 @@
 # Elara — Personal Portfolio
 
-A responsive personal portfolio built with React, Vite, and JavaScript. The visual direction uses a light canvas with black typography and restrained purple accents.
+A responsive personal portfolio built with React, Vite, JavaScript, React Router, and Tailwind CSS. The visual direction uses a light canvas, dark typography, and restrained purple accents.
 
 ## Stack
 
 - React + Vite
 - JavaScript (ES modules)
 - React Router for client-side pages
-- Plain CSS split into design tokens, global styles, reusable components, and page-level styling
+- Tailwind CSS 4 via the Vite plugin
+- Static portfolio content in `src/data/portfolio.js`
 - Vercel for static deployment
 
 ## Local development
 
-PowerShell may block the npm.ps1 shim depending on your execution policy. On Windows, use the .cmd executable:
+PowerShell may block the `npm.ps1` shim depending on your execution policy. On Windows, use the `.cmd` executable:
 
     npm.cmd install
     npm.cmd run dev
@@ -28,19 +29,25 @@ Useful checks:
     src/
     ├── app/                 # Router and application setup
     ├── components/
-    │   ├── common/          # Shared navigation and footer
-    │   └── projects/        # Reusable project presentation
-    ├── data/                # Static portfolio content
+    │   ├── common/          # Navbar, footer, and shared UI
+    │   └── projects/        # Reusable project card
+    ├── data/
+    │   └── portfolio.js     # Profile, skills, experience, education, projects
     ├── layouts/             # Shared page shell
-    ├── pages/               # Home, About, Skills, Projects, detail, Contact
-    └── styles/              # Design tokens, global styles, component/page styles
+    ├── pages/               # Home, Skills, Experience, Projects, detail, Contact
+    └── styles/              # Tailwind entry and styling
 
-## Content to personalize
+## Updating portfolio content
 
-- Update project details in src/data/projects.js.
-- Replace the example email and LinkedIn URL in src/pages/Contact.jsx.
-- Replace the abstract monogram visuals with your own photo or project imagery when ready.
+- Edit profile, skills, experience, education, and project information in `src/data/portfolio.js`.
+- Update the real contact links in the same file when needed.
+- The CV links on the Contact page expect a future PDF at `public/cv.pdf`. Add the file before publishing those links as working downloads.
+
+## Branding
+
+- The site logo is stored at `public/logo.svg`.
+- Public assets are referenced from the site root, so use `/logo.svg` in the app, not `/public/logo.svg`.
 
 ## Deployment
 
-Import the GitHub repository into Vercel. For a Vite static site, the standard build command is npm run build and the output directory is dist. Vercel can detect the Vite setup automatically.
+Import this repository into Vercel. Vercel should detect Vite automatically. Use `npm run build` as the build command and `dist` as the output directory.
