@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom'
 
 const footerLinks = [
-  { label: 'About', to: '/about' },
+  { label: 'Home', to: '/' },
   { label: 'Projects', to: '/projects' },
   { label: 'Skills', to: '/skills' },
   { label: 'Experience', to: '/experience' },
-  { label: 'Contact', to: '/contact' },
+  { label: 'Contact & CV', to: '/contact' },
 ]
 
 export default function Footer() {
