@@ -29,7 +29,7 @@ export const experiences = [
     employmentType: "Volunteer",
     location: "Bekasi, Indonesia",
     startDate: "2025-06-13",
-    endDate: "2025-07-03",
+    endDate: "2026-07-03",
     current: false,
     description:
       "Supported freshman activities and collaborated with other volunteers during university orientation.",
