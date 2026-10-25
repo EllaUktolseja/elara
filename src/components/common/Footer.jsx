@@ -31,11 +31,6 @@ export default function Footer() {
               Thoughtful work, useful digital experiences, and a little
               curiosity for what comes next.
             </p>
-
-            <p className="mt-5 flex items-center gap-2 text-xs font-semibold tracking-wide text-purple-dark">
-              <span className="size-2 rounded-full bg-emerald-400 shadow-[0_0_0_4px_#e4f7ed]" />
-              Based in Indonesia · Open to opportunities
-            </p>
           </div>
 
           <nav
