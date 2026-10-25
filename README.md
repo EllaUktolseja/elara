@@ -1,16 +1,25 @@
-# React + Vite
+# Elara — Personal Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Elara is a personal portfolio website showcasing my journey as a computer science student and aspiring Fullstack JavaScript Developer.
 
-Currently, two official plugins are available:
+The website brings together selected projects, technical skills, professional experience, education, and contact information in one place.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+- **About & Contact** — An introduction and ways to connect.
+- **Projects** — Selected work, project details, technologies, and development status.
+- **Skills** — An overview of technical skills and areas of learning.
+- **Experience & Education** — A summary of professional and academic experience.
+- **Responsive Design** — A layout designed for desktop and mobile screens.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Built With
 
-## Expanding the ESLint configuration
+- React
+- JavaScript
+- Vite
+- React Router
+- Tailwind CSS
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Elara is an ongoing personal project built to document my progress, demonstrate practical development skills, and share my work with the developer community.
+
+**Repository:** [EllaUktolseja/elara](https://github.com/EllaUktolseja/elara)
