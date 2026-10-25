@@ -102,13 +102,6 @@ export default function Contact() {
                 Download CV
               </a>
             </div>
-            <p className="mt-4 mb-0 text-xs leading-5 text-muted">
-              The CV PDF is served from{" "}
-              <code className="rounded bg-white/80 px-1.5 py-0.5">
-                public/cv.pdf
-              </code>
-              . Add your final CV there before publishing.
-            </p>
           </section>
 
           <section>
