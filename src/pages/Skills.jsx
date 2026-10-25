@@ -40,31 +40,7 @@ export default function Skills() {
             <div className="skill-core absolute left-1/2 top-1/2 z-10 grid size-28 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full border border-white/90 bg-gradient-to-br from-purple-dark via-purple to-[#b28af4] text-white shadow-[0_20px_55px_rgba(85,53,158,.25)] sm:size-32">
               <div className="text-center"><span className="block font-display text-3xl font-extrabold tracking-[-.08em]">E.</span><span className="mt-1 block text-[.55rem] font-bold tracking-[.14em]">ELARA</span></div>
             </div>
-            {orbitSkills.map((name, index) => {
-              const positions = [
-                { left: '50%', top: '8%' },
-                { left: '80%', top: '20%' },
-                { left: '91%', top: '48%' },
-                { left: '74%', top: '79%' },
-                { left: '46%', top: '91%' },
-                { left: '17%', top: '76%' },
-                { left: '8%', top: '45%' },
-                { left: '22%', top: '17%' },
-              ]
-              return (
-                <span
-                  key={name}
-                  className="skill-node"
-                  style={{
-                    left: positions[index].left,
-                    top: positions[index].top,
-                    transform: 'translate(-50%, -50%)',
-                  }}
-                >
-                  {name}
-                </span>
-              )
-            })}
+            {orbitSkills.map((name, index) => <span key={name} className={`skill-node skill-node--${(index % 8) + 1}`}>{name}</span>)}
             <span className="absolute bottom-[4%] left-1/2 -translate-x-1/2 text-[.6rem] font-bold tracking-[.2em] text-purple-dark/55">LEARN / BUILD / REFINE</span>
           </div>
         </div>
