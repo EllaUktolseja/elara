@@ -1,53 +1,25 @@
 # Elara — Personal Portfolio
 
-A responsive personal portfolio built with React, Vite, JavaScript, React Router, and Tailwind CSS. The visual direction uses a light canvas, dark typography, and restrained purple accents.
+Elara is a personal portfolio website showcasing my journey as a computer science student and aspiring Fullstack JavaScript Developer.
 
-## Stack
+The website brings together selected projects, technical skills, professional experience, education, and contact information in one place.
 
-- React + Vite
-- JavaScript (ES modules)
-- React Router for client-side pages
-- Tailwind CSS 4 via the Vite plugin
-- Static portfolio content in `src/data/portfolio.js`
-- Vercel for static deployment
+## Features
 
-## Local development
+- **About & Contact** — An introduction and ways to connect.
+- **Projects** — Selected work, project details, technologies, and development status.
+- **Skills** — An overview of technical skills and areas of learning.
+- **Experience & Education** — A summary of professional and academic experience.
+- **Responsive Design** — A layout designed for desktop and mobile screens.
 
-PowerShell may block the `npm.ps1` shim depending on your execution policy. On Windows, use the `.cmd` executable:
+## Built With
 
-    npm.cmd install
-    npm.cmd run dev
+- React
+- JavaScript
+- Vite
+- React Router
+- Tailwind CSS
 
-Useful checks:
+Elara is an ongoing personal project built to document my progress, demonstrate practical development skills, and share my work with the developer community.
 
-    npm.cmd run lint
-    npm.cmd run build
-    npm.cmd run preview
-
-## Project structure
-
-    src/
-    ├── app/                 # Router and application setup
-    ├── components/
-    │   ├── common/          # Navbar, footer, and shared UI
-    │   └── projects/        # Reusable project card
-    ├── data/
-    │   └── portfolio.js     # Profile, skills, experience, education, projects
-    ├── layouts/             # Shared page shell
-    ├── pages/               # Home, Skills, Experience, Projects, detail, Contact
-    └── styles/              # Tailwind entry and styling
-
-## Updating portfolio content
-
-- Edit profile, skills, experience, education, and project information in `src/data/portfolio.js`.
-- Update the real contact links in the same file when needed.
-- The CV links on the Contact page expect a future PDF at `public/cv.pdf`. Add the file before publishing those links as working downloads.
-
-## Branding
-
-- The site logo is stored at `public/logo.svg`.
-- Public assets are referenced from the site root, so use `/logo.svg` in the app, not `/public/logo.svg`.
-
-## Deployment
-
-Import this repository into Vercel. Vercel should detect Vite automatically. Use `npm run build` as the build command and `dist` as the output directory.
+**Repository:** [EllaUktolseja/elara](https://github.com/EllaUktolseja/elara)
