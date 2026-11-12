@@ -25,14 +25,26 @@ export const experiences = [
   },
   {
     company: "BINUS University",
-    position: "Freshman Chaperone",
-    employmentType: "Volunteer",
+    position: "Freshman Partner",
+    employmentType: "Contract",
     location: "Bekasi, Indonesia",
-    startDate: "2025-06-13",
-    endDate: "2026-07-03",
+    startDate: "2025-09-08",
+    endDate: "2026-07-13",
     current: false,
     description:
-      "Supported freshman activities and collaborated with other volunteers during university orientation.",
+      "Executed a year-long mentorship program with weekly check-ins to guide freshmen through university transitions, achieving zero dropouts and a 100% orientation completion rate.",
+    technologies: [],
+  },
+  {
+    company: "BINUS University",
+    position: "Freshman Leader",
+    employmentType: "Contract",
+    location: "Bekasi, Indonesia",
+    startDate: "2025-08-18",
+    endDate: "2025-09-04",
+    current: false,
+    description:
+      "Mentored 50+ incoming freshmen through academic and social transitions while facilitating interactive orientation sessions on campus policies and resources to foster early engagement.",
     technologies: [],
   },
 ];
