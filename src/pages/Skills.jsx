@@ -1,23 +1,31 @@
 import { skills } from "../data/portfolio.js";
 
 const categoryNotes = {
-  Languages:
-    "The foundations I use to reason about problems and express solutions.",
-  Frontend: "The tools I use to shape clear, responsive user experiences.",
-  Backend: "The foundations for application logic and server-side workflows.",
-  Databases: "How I organize, persist, and work with application data.",
-  Tools: "The workflow that supports building, testing, and shipping projects.",
+  "Programming Languages":
+    "The programming languages I use to understand problems and develop software solutions.",
+  Frontend:
+    "The technologies I use to build responsive and interactive user interfaces.",
+  Backend:
+    "The tools and frameworks I am exploring to develop application logic and server-side systems.",
+  "Database & ORM":
+    "The technologies I use to store, organize, and manage application data.",
+  "Tools & DevOps":
+    "The tools that support version control, development workflows, and application deployment.",
+  "Operating Systems":
+    "The environments I use to work with development tools and system operations.",
+  Cloud:
+    "Cloud technologies I am currently exploring for hosting and infrastructure.",
 };
 
 const orbitSkills = [
   "JavaScript",
   "React",
+  "Next.js",
   "Node.js",
-  "Express",
   "PostgreSQL",
-  "Git",
-  "CSS",
   "Docker",
+  "Linux",
+  "AWS",
 ];
 
 export default function Skills() {
@@ -197,7 +205,20 @@ export default function Skills() {
                     className="skill-word group relative py-1 text-base font-semibold text-ink transition-colors hover:text-purple sm:text-lg"
                     key={skill.name}
                   >
-                    {skill.name}
+                    <div className="flex flex-wrap items-center gap-2">
+                      <span>{skill.name}</span>
+                      <span
+                        className={`rounded-full px-2 py-0.5 text-[.65rem] font-semibold ${
+                          skill.level === "Working"
+                            ? "bg-emerald-50 text-emerald-700"
+                            : skill.level === "Familiar"
+                              ? "bg-blue-50 text-blue-700"
+                              : "bg-amber-50 text-amber-700"
+                        }`}
+                      >
+                        {skill.level}
+                      </span>
+                    </div>
                     <span className="absolute inset-x-0 -bottom-0.5 h-px origin-left scale-x-0 bg-purple transition-transform duration-300 group-hover:scale-x-100" />
                   </span>
                 ))}
