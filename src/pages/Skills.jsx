@@ -85,7 +85,7 @@ export default function Skills() {
               <span className="skill-orbit__dot" />
             </div>
             <div className="absolute inset-[29%] rounded-full bg-purple/10 blur-2xl" />
-            <div className="skill-core absolute left-1/2 top-1/2 z-10 grid size-28 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full border border-white/90 bg-gradient-to-br from-purple-dark via-purple to-[#b28af4] text-white shadow-[0_20px_55px_rgba(85,53,158,.25)] sm:size-32">
+            <div className="skill-core absolute left-1/2 top-1/2 z-10 grid size-28 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full border border-white/90 bg-gradient-to-br from-purple-dark via-purple to-[#8058c8] text-white shadow-[0_20px_55px_rgba(85,53,158,.25)] sm:size-32">
               <div className="text-center">
                 <span className="block font-display text-3xl font-extrabold tracking-[-.08em]">
                   E.
@@ -122,9 +122,6 @@ export default function Skills() {
                 </span>
               );
             })}
-            <span className="absolute bottom-[4%] left-1/2 -translate-x-1/2 text-[.6rem] font-bold tracking-[.2em] text-purple-dark/55">
-              LEARN / BUILD / REFINE
-            </span>
           </div>
         </div>
       </section>
@@ -188,7 +185,7 @@ export default function Skills() {
               key={category}
             >
               <div>
-                <p className="mb-2 text-xs font-bold tracking-[.16em] text-purple/70">
+                <p className="mb-2 text-xs font-bold tracking-[.16em] text-purple-dark">
                   {String(index + 1).padStart(2, "0")} / CATEGORY
                 </p>
                 <h3 className="mb-2 font-display text-2xl font-extrabold tracking-[-.05em]">

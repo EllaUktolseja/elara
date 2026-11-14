@@ -49,7 +49,7 @@ export default function ProjectCard({ project }) {
 
               <div className="absolute right-9 top-10 size-20 rounded-full bg-white/50 blur-2xl transition duration-500 group-hover:scale-150" />
 
-              <span className="absolute left-6 top-6 text-xs font-bold tracking-[.2em] text-purple-dark/70">
+              <span className="absolute left-6 top-6 text-xs font-bold tracking-[.2em] text-purple-dark">
                 {String(project.sortOrder).padStart(2, "0")} / ELARA
               </span>
 

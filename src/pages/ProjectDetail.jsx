@@ -1,6 +1,6 @@
 import { Link, useParams } from "react-router-dom";
 import { getProjectBySlug } from "../data/portfolio.js";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const statusStyles = {
   completed: "bg-emerald-50 text-emerald-700 ring-emerald-200",
@@ -18,13 +18,41 @@ export default function ProjectDetail() {
   const project = getProjectBySlug(slug);
 
   const [selectedScreenshot, setSelectedScreenshot] = useState(null);
+  const screenshotTriggerRef = useRef(null);
+  const closeButtonRef = useRef(null);
+  const dialogRef = useRef(null);
 
   useEffect(() => {
     if (!selectedScreenshot) return;
 
+    closeButtonRef.current?.focus();
+
     const handleKeyDown = (event) => {
       if (event.key === "Escape") {
         setSelectedScreenshot(null);
+        return;
+      }
+
+      if (event.key === "Tab") {
+        const focusableElements = dialogRef.current?.querySelectorAll(
+          'button:not([disabled]), a[href], input:not([disabled]), [tabindex]:not([tabindex="-1"])',
+        );
+
+        if (!focusableElements?.length) {
+          event.preventDefault();
+          return;
+        }
+
+        const firstElement = focusableElements[0];
+        const lastElement = focusableElements[focusableElements.length - 1];
+
+        if (event.shiftKey && document.activeElement === firstElement) {
+          event.preventDefault();
+          lastElement.focus();
+        } else if (!event.shiftKey && document.activeElement === lastElement) {
+          event.preventDefault();
+          firstElement.focus();
+        }
       }
     };
 
@@ -32,6 +60,7 @@ export default function ProjectDetail() {
 
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
+      screenshotTriggerRef.current?.focus();
     };
   }, [selectedScreenshot]);
 
@@ -202,7 +231,7 @@ export default function ProjectDetail() {
               <span className="rounded-full border border-white/80 bg-white/70 px-3 py-1.5 text-[.65rem] font-bold tracking-[.16em] text-purple-dark">
                 ELARA / CASE STUDY
               </span>
-              <span className="text-xs font-semibold text-purple-dark/60">
+              <span className="text-xs font-semibold text-purple-dark">
                 VISUAL PREVIEW
               </span>
             </div>
@@ -210,7 +239,7 @@ export default function ProjectDetail() {
               <h3 className="mb-4 break-words font-display text-4xl font-extrabold leading-[1.02] tracking-[-.07em] text-purple-dark sm:text-6xl">
                 {project.title}
               </h3>
-              <p className="mb-6 max-w-lg leading-7 text-purple-dark/75">
+              <p className="mb-6 max-w-lg leading-7 text-purple-dark">
                 {project.shortDescription}
               </p>
               <div className="flex flex-wrap gap-2">
@@ -224,7 +253,7 @@ export default function ProjectDetail() {
                 ))}
               </div>
             </div>
-            <p className="mb-0 mt-7 max-w-xl text-xs leading-5 text-purple-dark/65">
+            <p className="mb-0 mt-7 max-w-xl text-xs leading-5 text-purple-dark">
               A preview image or live deployment has not been attached to this
               project yet. Add a <code>previewImage</code> path in{" "}
               <code>src/data/portfolio.js</code> to display an actual website
@@ -255,7 +284,10 @@ export default function ProjectDetail() {
                 >
                   <button
                     type="button"
-                    onClick={() => setSelectedScreenshot(screenshot)}
+                    onClick={(event) => {
+                      screenshotTriggerRef.current = event.currentTarget;
+                      setSelectedScreenshot(screenshot);
+                    }}
                     aria-label={`View ${screenshot.title} screenshot in full size`}
                     className="block aspect-video w-full cursor-zoom-in overflow-hidden bg-[#f5f1fc]"
                   >
@@ -469,7 +501,8 @@ export default function ProjectDetail() {
           <div
             role="dialog"
             aria-modal="true"
-            aria-label={`${selectedScreenshot.title} screenshot`}
+            ref={dialogRef}
+            aria-labelledby="screenshot-dialog-title"
             className="relative w-full max-w-6xl"
             onClick={(event) => event.stopPropagation()}
           >
@@ -489,7 +522,10 @@ export default function ProjectDetail() {
             />
 
             <div className="mt-4 text-center text-white">
-              <h3 className="font-display text-lg font-bold">
+              <h3
+                id="screenshot-dialog-title"
+                className="font-display text-lg font-bold"
+              >
                 {selectedScreenshot.title}
               </h3>
               <p className="mt-1 text-sm text-white/70">

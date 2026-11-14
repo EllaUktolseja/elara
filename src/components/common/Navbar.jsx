@@ -1,9 +1,8 @@
-import { useEffect, useState } from "react";
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { useState } from "react";
+import { Link, NavLink } from "react-router-dom";
 
 const navLinks = [
   { label: "Home", path: "/", end: true },
-  { label: "About", path: "/about" },
   { label: "Experience", path: "/experience" },
   { label: "Skills", path: "/skills" },
   { label: "Projects", path: "/projects" },
@@ -16,11 +15,6 @@ const linkClass = ({ isActive }) =>
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const location = useLocation();
-
-  useEffect(() => {
-    setIsMenuOpen(false);
-  }, [location.pathname]);
 
   return (
     <header className="sticky top-0 z-50 border-b border-line bg-white/90 backdrop-blur-xl">
@@ -44,6 +38,7 @@ export default function Navbar() {
               key={link.path}
               to={link.path}
               end={link.end}
+              onClick={() => setIsMenuOpen(false)}
               className={linkClass}
             >
               {({ isActive }) => (
@@ -111,6 +106,7 @@ export default function Navbar() {
                 key={link.path}
                 to={link.path}
                 end={link.end}
+                onClick={() => setIsMenuOpen(false)}
                 className={({ isActive }) =>
                   `border-b border-line py-4 text-sm font-semibold transition-colors ${
                     isActive ? "text-purple-dark" : "text-muted hover:text-ink"

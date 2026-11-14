@@ -69,7 +69,7 @@ export default function Home() {
         <div className="relative z-10">
           <Eyebrow>
             <span className="size-2 rounded-full bg-emerald-400 shadow-[0_0_0_4px_#e4f7ed]" />{" "}
-            FULLSTACK JAVASCRIPT DEVELOPER IN PROGRESS
+            FULLSTACK WEBSITE DEVELOPER IN PROGRESS
           </Eyebrow>
           <h1 className="mb-6 max-w-3xl font-display text-[clamp(3.2rem,6.5vw,5.8rem)] font-extrabold leading-[1.02] tracking-[-.07em] text-ink max-sm:text-[clamp(2.8rem,13vw,4rem)]">
             Curious by nature.{" "}
@@ -121,7 +121,7 @@ export default function Home() {
               </div>
             </div>
             <div className="flex items-center justify-between gap-3 px-3 pb-2 pt-4">
-              <span className="text-[.65rem] font-bold tracking-[.16em] text-purple-dark/65">
+              <span className="text-[.65rem] font-bold tracking-[.16em] text-purple-dark">
                 ELARA / PORTFOLIO
               </span>
               <span className="flex items-center gap-2 text-xs font-semibold text-ink">
@@ -170,7 +170,7 @@ export default function Home() {
               className="group rounded-2xl border border-line bg-white p-7 transition duration-300 hover:-translate-y-1 hover:border-purple/30 hover:shadow-xl hover:shadow-purple/5"
               key={item.number}
             >
-              <span className="mb-8 block font-display text-sm font-extrabold tracking-[.15em] text-purple/60">
+              <span className="mb-8 block font-display text-sm font-extrabold tracking-[.15em] text-purple-dark">
                 {item.number}
               </span>
               <h3 className="mb-3 text-xl font-bold">{item.title}</h3>
@@ -235,7 +235,7 @@ export default function Home() {
                 <div className="absolute -right-2 top-2 size-48 rounded-full border border-purple/20" />
                 <div className="absolute bottom-12 right-14 size-24 rounded-full bg-white/70 blur-2xl" />
                 <div className="flex items-center justify-between gap-4">
-                  <span className="text-xs font-bold tracking-[.18em] text-purple-dark/70">
+                  <span className="text-xs font-bold tracking-[.18em] text-purple-dark">
                     FEATURED TRANSMISSION
                   </span>
                   <span className="rounded-full border border-white/80 bg-white/70 px-3 py-1.5 text-xs font-bold text-purple-dark">
@@ -243,19 +243,20 @@ export default function Home() {
                   </span>
                 </div>
                 <div className="relative z-10">
-                  <p className="mb-3 font-display text-sm font-bold tracking-[.16em] text-purple-dark/65">
+                  <p className="mb-3 font-display text-sm font-bold tracking-[.16em] text-purple-dark">
                     {String(activeSlide + 1).padStart(2, "0")} /{" "}
                     {String(featuredProjects.length).padStart(2, "0")}
                   </p>
                   <h3 className="mb-4 max-w-lg break-words font-display text-5xl font-extrabold leading-[.98] tracking-[-.07em] text-purple-dark sm:text-6xl">
                     {activeProject.title}
                   </h3>
-                  <p className="mb-0 max-w-sm leading-7 text-purple-dark/75">
+                  <p className="mb-0 max-w-sm leading-7 text-purple-dark">
+                    {" "}
                     {activeProject.technologies.slice(0, 4).join(" · ")}
                   </p>
                 </div>
                 <div className="relative z-10 flex items-center justify-between gap-4">
-                  <span className="text-xs font-semibold tracking-wide text-purple-dark/70">
+                  <span className="text-xs font-semibold tracking-wide text-purple-dark">
                     SELECTED WORK / 2026
                   </span>
                   <span className="font-display text-5xl font-extrabold tracking-[-.1em] text-purple-dark/15">
@@ -283,7 +284,7 @@ export default function Home() {
                       .slice(0, 5)
                       .map((technology) => (
                         <span
-                          className="rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-xs font-semibold text-white/80"
+                          className="rounded-lg border border-purple-dark/15 bg-white/70 px-3 py-2 text-xs font-semibold text-purple-dark"
                           key={technology}
                         >
                           {technology}
