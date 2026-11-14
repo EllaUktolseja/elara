@@ -62,44 +62,118 @@ export const educations = [
 ];
 
 export const skills = [
-  { name: "C", category: "Languages", level: "Working", sortOrder: 1 },
-  { name: "Java", category: "Languages", level: "Learning", sortOrder: 2 },
   {
-    name: "JavaScript",
-    category: "Languages",
-    level: "Learning",
+    name: "C",
+    category: "Programming Languages",
+    level: "Working",
+    sortOrder: 1,
+  },
+  {
+    name: "Python",
+    category: "Programming Languages",
+    level: "Familiar",
+    sortOrder: 2,
+  },
+  {
+    name: "Java",
+    category: "Programming Languages",
+    level: "Familiar",
     sortOrder: 3,
   },
-  { name: "Python", category: "Languages", level: "Working", sortOrder: 4 },
+  {
+    name: "JavaScript",
+    category: "Programming Languages",
+    level: "Learning",
+    sortOrder: 4,
+  },
   {
     name: "TypeScript",
-    category: "Languages",
+    category: "Programming Languages",
     level: "Learning",
     sortOrder: 5,
   },
-  { name: "HTML", category: "Frontend", level: "Working", sortOrder: 6 },
-  { name: "CSS", category: "Frontend", level: "Working", sortOrder: 7 },
-  { name: "React", category: "Frontend", level: "Learning", sortOrder: 8 },
-  { name: "Next.js", category: "Frontend", level: "Learning", sortOrder: 9 },
+
+  {
+    name: "HTML",
+    category: "Frontend",
+    level: "Working",
+    sortOrder: 6,
+  },
+  {
+    name: "CSS",
+    category: "Frontend",
+    level: "Working",
+    sortOrder: 7,
+  },
+  {
+    name: "React",
+    category: "Frontend",
+    level: "Learning",
+    sortOrder: 8,
+  },
+  {
+    name: "Next.js",
+    category: "Frontend",
+    level: "Learning",
+    sortOrder: 9,
+  },
   {
     name: "Tailwind CSS",
     category: "Frontend",
     level: "Learning",
     sortOrder: 10,
   },
+
   { name: "Node.js", category: "Backend", level: "Learning", sortOrder: 11 },
   { name: "Express", category: "Backend", level: "Learning", sortOrder: 12 },
   { name: "NestJS", category: "Backend", level: "Learning", sortOrder: 13 },
-  { name: "MongoDB", category: "Databases", level: "Learning", sortOrder: 14 },
+
   {
-    name: "PostgreSQL",
-    category: "Databases",
+    name: "MySQL",
+    category: "Database & ORM",
+    level: "Working",
+    sortOrder: 14,
+  },
+  {
+    name: "MongoDB",
+    category: "Database & ORM",
     level: "Learning",
     sortOrder: 15,
   },
-  { name: "Prisma", category: "Databases", level: "Learning", sortOrder: 16 },
-  { name: "Docker", category: "Tools", level: "Learning", sortOrder: 17 },
-  { name: "Git & GitHub", category: "Tools", level: "Working", sortOrder: 18 },
+  {
+    name: "PostgreSQL",
+    category: "Database & ORM",
+    level: "Learning",
+    sortOrder: 16,
+  },
+  {
+    name: "Prisma",
+    category: "Database & ORM",
+    level: "Learning",
+    sortOrder: 17,
+  },
+
+  {
+    name: "Git & GitHub",
+    category: "Tools & DevOps",
+    level: "Familiar",
+    sortOrder: 18,
+  },
+  {
+    name: "Docker",
+    category: "Tools & DevOps",
+    level: "Familiar",
+    sortOrder: 19,
+  },
+
+  {
+    name: "Linux (Ubuntu)",
+    category: "Operating Systems",
+    level: "Familiar",
+    sortOrder: 20,
+  },
+
+  { name: "AWS", category: "Cloud", level: "Learning", sortOrder: 21 },
 ];
 
 export const projects = [
@@ -107,15 +181,19 @@ export const projects = [
     title: "Realla Web",
     slug: "realla-web",
     projectType: "Personal project",
+    year: 2026,
+    role: "Web Designer and Developer",
+    contribution:
+      "Designed and developed the website using vanilla HTML, CSS, and JavaScript, including product presentation, customer review integration, and WhatsApp ordering flow.",
+    description:
+      "A personal portfolio platform originally developed using React, TypeScript, and Vite, with an Express and MongoDB backend. The project explored a full-stack portfolio architecture, although the backend deployment was not successfully completed.",
     goal: "Present professional identity, experience, technical skills, and selected work in a cohesive portfolio.",
     status: "completed",
     shortDescription:
       "A portfolio platform presenting professional identity, experience, technical skills, and project case studies.",
-    description:
-      "A personal portfolio platform originally developed with React, TypeScript, Vite, and a full-stack architecture. This Elara version is being rebuilt as a static frontend, with locally defined portfolio data and direct contact links.",
     technologies: [
       "React",
-      "JavaScript",
+      "TypeScript",
       "Vite",
       "CSS",
       "Express",
@@ -123,6 +201,24 @@ export const projects = [
       "Docker",
     ],
     repositoryUrl: "https://github.com/EllaUktolseja/realla-web",
+    previewImage: "/images/projects/realla-web/thumbnail.png",
+    screenshots: [
+      {
+        src: "/images/projects/realla-web/screenshots/home.png",
+        title: "Home Page",
+        description: "The main landing page and personal introduction.",
+      },
+      {
+        src: "/images/projects/realla-web/screenshots/projects.png",
+        title: "Projects Page",
+        description: "An overview of selected portfolio projects.",
+      },
+      {
+        src: "/images/projects/realla-web/screenshots/project-detail.png",
+        title: "Project Detail",
+        description: "A detailed presentation of an individual project.",
+      },
+    ],
     liveUrl: "",
     featured: true,
     sortOrder: 1,
@@ -130,14 +226,18 @@ export const projects = [
   {
     title: "Rookees",
     slug: "rookees",
-    projectType: "Group project",
+    projectType: "Academic project",
+    year: 2026,
+    role: "Web Designer and Developer",
+    contribution:
+      "Designed and developed the website using vanilla HTML, CSS, and JavaScript, including product presentation, customer review integration, and WhatsApp ordering flow.",
     goal: "Introduce the browkies product, showcase its presentation, and make it easy for customers to submit reviews or place orders.",
     status: "ongoing",
     shortDescription:
       "A youthful product showcase for a brownie-cookie treat, designed to introduce the product and connect with potential customers.",
     description:
-      "A product-focused website built around visual storytelling, product presentation, and direct customer contact.",
-    technologies: ["HTML", "CSS", "JavaScript"],
+      "A product showcase website for an artisanal browkies business. Built with vanilla HTML, CSS, and JavaScript, the website presents product information, collects customer reviews through Google Apps Script, and provides direct WhatsApp ordering.",
+    technologies: ["HTML", "CSS", "JavaScript", "Google Apps Script"],
     repositoryUrl: "https://github.com/EllaUktolseja/rookees",
     liveUrl: "",
     featured: true,
@@ -146,12 +246,17 @@ export const projects = [
   {
     title: "GY-O-REAL E-Commerce",
     slug: "gy-o-real-e-commerce",
+    projectType: "Personal project",
+    year: 2026,
+    role: "Web Designer and Developer",
+    contribution:
+      "Established an initial monorepo structure, configured PostgreSQL and Prisma, and implemented early category and product CRUD APIs. The existing implementation is being reassessed as part of a broader system redesign.",
     goal: "Build an e-commerce experience with a storefront, API, and relational data foundation.",
     status: "ongoing",
     shortDescription:
       "A full-stack e-commerce platform with a modern storefront, API, and relational database.",
     description:
-      "An e-commerce project using Next.js, NestJS, PostgreSQL, and Prisma. The platform is being developed in stages, from application foundations and catalog functionality toward commerce workflows.",
+      "A planned full-stack e-commerce platform intended to follow real-world commerce system practices. The project is undergoing architectural planning and redesign, covering application structure, database design, commerce workflows, and cloud deployment strategy before the next implementation phase.",
     technologies: [
       "Next.js",
       "React",
@@ -161,11 +266,10 @@ export const projects = [
       "Prisma",
       "Docker",
     ],
-    progress: 55,
     currentFocus: [
-      "Product and category API foundations",
-      "Connecting the storefront to the backend",
-      "Planning authentication, cart, and checkout workflows",
+      "Reassessing the existing system architecture and application structure",
+      "Planning production-ready e-commerce workflows and database design",
+      "Evaluating cloud infrastructure and deployment strategy",
     ],
     milestones: [
       { title: "Monorepo foundation", completed: true },
@@ -183,12 +287,17 @@ export const projects = [
   {
     title: "FoodFoundry",
     slug: "foodfoundry",
+    projectType: "Personal project",
+    year: 2026,
+    role: "Project Designer",
+    contribution:
+      "Designed the overall structure and user experience for the cookie showcase and community feedback platform.",
     goal: "Showcase baked products and collect community feedback through a dedicated web experience.",
     status: "planning",
     shortDescription:
-      "A planned cookie showcase and community feedback platform for gathering real-world product feedback.",
+      "A planned full-stack food discovery and review platform covering restaurants, street food, local cuisine, and packaged food products.",
     description:
-      "A planned web application combining product presentation with a community feedback workflow.",
+      "A full-stack food review platform concept designed to help users discover and explore different kinds of food. From restaurants and local street food to packaged products, the platform aims to bring food experiences and community reviews together as a useful reference for people looking for something new to try.",
     technologies: ["Next.js", "NestJS", "PostgreSQL", "Prisma", "Docker"],
     repositoryUrl: "https://github.com/EllaUktolseja/FoodFoundry",
     liveUrl: "",
@@ -198,12 +307,17 @@ export const projects = [
   {
     title: "Food Waste",
     slug: "food-waste",
+    projectType: "Academic project",
+    year: 2026,
     goal: "Connect customers with discounted surplus food to help make excess food more accessible and reduce waste.",
+    role: "Web Designer and Frontend Developer",
+    contribution:
+      "Designed and developed the frontend of a marketplace prototype, focusing on user experience and mobile-first design.",
     status: "completed",
     shortDescription:
-      "A marketplace prototype connecting users with discounted surplus food.",
+      "A food surplus marketplace that helps restaurants sell discounted leftover food while allowing consumers to discover and order affordable meals for self-pickup.",
     description:
-      "A mobile-first marketplace concept focused on reducing food waste and making surplus food more accessible.",
+      "A food surplus marketplace designed to reduce restaurant food waste by connecting merchants with consumers looking for more affordable meals. Restaurants can list surplus food that is still safe for consumption at discounted prices, while consumers can discover nearby offers, place orders, make payments, and collect their purchases directly from the merchant. The platform provides separate experiences for consumers and merchants, supporting a more sustainable approach to food distribution.",
     technologies: ["React", "TypeScript", "Tailwind CSS", "Docker", "Go"],
     repositoryUrl: "",
     liveUrl: "",
@@ -213,6 +327,11 @@ export const projects = [
   {
     title: "Veritas",
     slug: "veritas",
+    projectType: "Academic project",
+    year: 2026,
+    role: "Web Designer and Frontend Developer",
+    contribution:
+      "Designed and developed the frontend of a fake-news detection platform, focusing on user experience and data visualization.",
     goal: "Help users assess potentially misleading news through text analysis and machine-learning workflows.",
     status: "completed",
     shortDescription:
@@ -235,6 +354,11 @@ export const projects = [
   {
     title: "Affili.io",
     slug: "affilio",
+    projectType: "Competition project",
+    year: 2026,
+    role: "Web Designer and Frontend Developer",
+    contribution:
+      "Designed and developed the frontend of a market intelligence platform, focusing on user experience and data visualization.",
     goal: "Support affiliate marketers in exploring product opportunities through market and trend information.",
     status: "completed",
     shortDescription:
@@ -250,6 +374,11 @@ export const projects = [
   {
     title: "JobSeek",
     slug: "jobseek",
+    projectType: "Academic project",
+    year: 2026,
+    role: "Web Designer and Frontend Developer",
+    contribution:
+      "Designed and developed the frontend of a job recommendation platform, focusing on user experience and data visualization.",
     goal: "Recommend job opportunities that align with a user profile using a trained model.",
     status: "completed",
     shortDescription:
@@ -265,6 +394,11 @@ export const projects = [
   {
     title: "Gradia",
     slug: "gradia",
+    projectType: "Personal project",
+    year: 2026,
+    role: "Project Designer",
+    contribution:
+      "Designed the overall structure and user experience for the AI-assisted grading platform.",
     goal: "Explore how AI-assisted workflows could support academic grading and assessment.",
     status: "planning",
     shortDescription:
@@ -280,6 +414,11 @@ export const projects = [
   {
     title: "Rewoven",
     slug: "rewoven",
+    projectType: "Personal project",
+    year: 2026,
+    role: "Project Designer",
+    contribution:
+      "Designed the overall structure and user experience for the digital platform exploring reuse and sustainable product workflows.",
     goal: "Explore a digital workflow for reuse and sustainable product transformation.",
     status: "planning",
     shortDescription:
@@ -295,6 +434,11 @@ export const projects = [
   {
     title: "ChainPulse",
     slug: "chainpulse",
+    projectType: "Personal project",
+    year: 2026,
+    role: "Project Designer",
+    contribution:
+      "Designed the overall structure and user experience for the monitoring platform.",
     goal: "Surface service health, events, and operational signals in a monitoring dashboard.",
     status: "planning",
     shortDescription:

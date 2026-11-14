@@ -1,23 +1,31 @@
 import { skills } from "../data/portfolio.js";
 
 const categoryNotes = {
-  Languages:
-    "The foundations I use to reason about problems and express solutions.",
-  Frontend: "The tools I use to shape clear, responsive user experiences.",
-  Backend: "The foundations for application logic and server-side workflows.",
-  Databases: "How I organize, persist, and work with application data.",
-  Tools: "The workflow that supports building, testing, and shipping projects.",
+  "Programming Languages":
+    "The programming languages I use to understand problems and develop software solutions.",
+  Frontend:
+    "The technologies I use to build responsive and interactive user interfaces.",
+  Backend:
+    "The tools and frameworks I am exploring to develop application logic and server-side systems.",
+  "Database & ORM":
+    "The technologies I use to store, organize, and manage application data.",
+  "Tools & DevOps":
+    "The tools that support version control, development workflows, and application deployment.",
+  "Operating Systems":
+    "The environments I use to work with development tools and system operations.",
+  Cloud:
+    "Cloud technologies I am currently exploring for hosting and infrastructure.",
 };
 
 const orbitSkills = [
   "JavaScript",
   "React",
+  "Next.js",
   "Node.js",
-  "Express",
   "PostgreSQL",
-  "Git",
-  "CSS",
   "Docker",
+  "Linux",
+  "AWS",
 ];
 
 export default function Skills() {
@@ -77,7 +85,7 @@ export default function Skills() {
               <span className="skill-orbit__dot" />
             </div>
             <div className="absolute inset-[29%] rounded-full bg-purple/10 blur-2xl" />
-            <div className="skill-core absolute left-1/2 top-1/2 z-10 grid size-28 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full border border-white/90 bg-gradient-to-br from-purple-dark via-purple to-[#b28af4] text-white shadow-[0_20px_55px_rgba(85,53,158,.25)] sm:size-32">
+            <div className="skill-core absolute left-1/2 top-1/2 z-10 grid size-28 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full border border-white/90 bg-gradient-to-br from-purple-dark via-purple to-[#8058c8] text-white shadow-[0_20px_55px_rgba(85,53,158,.25)] sm:size-32">
               <div className="text-center">
                 <span className="block font-display text-3xl font-extrabold tracking-[-.08em]">
                   E.
@@ -114,9 +122,6 @@ export default function Skills() {
                 </span>
               );
             })}
-            <span className="absolute bottom-[4%] left-1/2 -translate-x-1/2 text-[.6rem] font-bold tracking-[.2em] text-purple-dark/55">
-              LEARN / BUILD / REFINE
-            </span>
           </div>
         </div>
       </section>
@@ -180,7 +185,7 @@ export default function Skills() {
               key={category}
             >
               <div>
-                <p className="mb-2 text-xs font-bold tracking-[.16em] text-purple/70">
+                <p className="mb-2 text-xs font-bold tracking-[.16em] text-purple-dark">
                   {String(index + 1).padStart(2, "0")} / CATEGORY
                 </p>
                 <h3 className="mb-2 font-display text-2xl font-extrabold tracking-[-.05em]">
@@ -197,7 +202,20 @@ export default function Skills() {
                     className="skill-word group relative py-1 text-base font-semibold text-ink transition-colors hover:text-purple sm:text-lg"
                     key={skill.name}
                   >
-                    {skill.name}
+                    <div className="flex flex-wrap items-center gap-2">
+                      <span>{skill.name}</span>
+                      <span
+                        className={`rounded-full px-2 py-0.5 text-[.65rem] font-semibold ${
+                          skill.level === "Working"
+                            ? "bg-emerald-50 text-emerald-700"
+                            : skill.level === "Familiar"
+                              ? "bg-blue-50 text-blue-700"
+                              : "bg-amber-50 text-amber-700"
+                        }`}
+                      >
+                        {skill.level}
+                      </span>
+                    </div>
                     <span className="absolute inset-x-0 -bottom-0.5 h-px origin-left scale-x-0 bg-purple transition-transform duration-300 group-hover:scale-x-100" />
                   </span>
                 ))}
